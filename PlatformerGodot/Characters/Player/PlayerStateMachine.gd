@@ -19,8 +19,8 @@ func _state_logic(delta):
 		states.fall:
 			parent.x_move_air()
 		states.run:
+			parent.set_facing_right()
 			parent.x_move_ground()
-			parent.apply_friction()
 
 func _get_transition(delta):
 	match state:
@@ -34,13 +34,20 @@ func _get_transition(delta):
 		states.jump:
 			if parent.y_vel > 0:
 				return states.fall
+			if parent.is_on_ceiling():
+				return states.fall
 		states.fall:
+			if !parent.coyote_timer.is_stopped():
+				if Input.is_action_pressed("jump") and previous_state != states.jump:
+					return states.jump
 			if parent.is_on_floor():
 				if parent.x_vel == 0:
 					return states.idle
 				else:
 					return states.run
 		states.run:
+			if !parent.is_on_floor():
+				return states.fall
 			if parent.x_vel == 0:
 				return states.idle
 			if Input.is_action_pressed("jump"):
@@ -55,7 +62,10 @@ func _enter_state(new_state, old_state):
 			parent.play_anim("jump")
 			parent.jump()
 		states.fall:
+			if parent.y_vel < 0:
+				parent.y_vel = 0
 			parent.play_anim("fall")
+			parent.coyote_timer.start()
 		states.run:
 			parent.play_anim("run")
 
@@ -66,7 +76,7 @@ func _exit_state(old_state, new_state):
 		states.jump:
 			pass
 		states.fall:
-			pass
+			parent.coyote_timer.stop()
 		states.run:
 			pass
 
