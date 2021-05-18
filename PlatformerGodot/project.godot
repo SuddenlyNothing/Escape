@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://StateMachine.gd"
+"path": "res://Characters/StateMachine.gd"
 } ]
 _global_script_class_icons={
 "StateMachine": ""
@@ -22,7 +22,7 @@ _global_script_class_icons={
 
 config/name="PlatformerGodot"
 run/main_scene="res://GameScenes/TestScene.tscn"
-config/icon="res://icon.png"
+config/icon="res://Assets/Tiles/grass.png"
 
 [autoload]
 

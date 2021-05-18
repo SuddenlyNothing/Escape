@@ -6,23 +6,21 @@ onready var direction_dependents := $DirectionDependents
 onready var horizontal_raycast := $DirectionDependents/RayCast2D
 onready var coyote_timer := $CoyoteTimer
 
-export(int) var health := 5
+export(int) var air_move_speed := 20.0
+export(int) var ground_move_speed := 50.0
+export(int) var max_x_move_speed := 500.0
 
-export(int) var air_move_speed := 20
-export(int) var ground_move_speed := 50
-export(int) var max_x_move_speed := 500
+export(int) var friction := 50.0
 
-export(int) var friction := 50
+export(int) var jump_force := 600.0
 
-export(int) var jump_force := 600
+export(int) var gravity := 25.0
+export(int) var max_fall_speed := 1000.0
 
-export(int) var gravity := 25
-export(int) var max_fall_speed := 1000
-
-var x_vel := 0
+var x_vel := 0.0
 var facing_right = true
 
-var y_vel := 0
+var y_vel := 0.0
 
 func apply_gravity():
 	if is_on_floor():
