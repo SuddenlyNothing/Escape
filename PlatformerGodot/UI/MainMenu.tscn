@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Fonts/Title.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Fonts/Buttons.tres" type="DynamicFont" id=2]
 [ext_resource path="res://UI/MainMenu.gd" type="Script" id=3]
+[ext_resource path="res://UI/FadeIn.tscn" type="PackedScene" id=4]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -11,6 +12,8 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+play = "res://GameScenes/TestScene.tscn"
+credits = "res://UI/Credits.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -58,7 +61,7 @@ size_flags_vertical = 2
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.45098, 0, 0.447059, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.392157, 0.392157, 1 )
 enabled_focus_mode = 0
 text = "Play"
 flat = true
@@ -78,9 +81,11 @@ size_flags_vertical = 2
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.45098, 0, 0.447059, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.392157, 0.392157, 1 )
 text = "Credits"
 flat = true
+
+[node name="FadeIn" parent="." instance=ExtResource( 4 )]
 
 [connection signal="pressed" from="VBoxContainer/CenterContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="VBoxContainer/CenterContainer2/Credits" to="." method="_on_Credits_pressed"]
