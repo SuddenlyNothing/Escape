@@ -36,13 +36,13 @@ func apply_friction():
 func jump():
 	y_vel = -jump_force
 
-func x_movement_ground():
-	x_movement_input(ground_move_speed)
+func x_move_ground():
+	x_move_input(ground_move_speed)
 
-func x_movement_air():
-	x_movement_input(air_move_speed)
+func x_move_air():
+	x_move_input(air_move_speed)
 
-func x_movement_input(speed):
+func x_move_input(speed):
 	if Input.is_action_pressed("move_left"):
 		x_vel -= speed
 	if Input.is_action_pressed("move_right"):
@@ -52,7 +52,8 @@ func x_movement_input(speed):
 func move():
 	move_and_slide(Vector2(x_vel, y_vel), Vector2(0, 1))
 
-
+func play_anim(anim):
+	sprite.play(anim)
 
 
 
