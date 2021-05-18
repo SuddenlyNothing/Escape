@@ -8,7 +8,9 @@ func _ready():
 	call_deferred("set_state", states.idle)
 
 func _state_logic(delta):
+	parent.state_label.text = str(state)
 	parent.apply_gravity()
+	parent.move()
 	match state:
 		states.idle:
 			pass
@@ -18,6 +20,7 @@ func _state_logic(delta):
 			parent.x_move_air()
 		states.run:
 			parent.x_move_ground()
+			parent.apply_friction()
 
 func _get_transition(delta):
 	match state:
@@ -33,10 +36,15 @@ func _get_transition(delta):
 				return states.fall
 		states.fall:
 			if parent.is_on_floor():
-				return states.idle
+				if parent.x_vel == 0:
+					return states.idle
+				else:
+					return states.run
 		states.run:
 			if parent.x_vel == 0:
 				return states.idle
+			if Input.is_action_pressed("jump"):
+				return states.jump
 	return null
 
 func _enter_state(new_state, old_state):

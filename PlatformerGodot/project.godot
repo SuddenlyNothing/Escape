@@ -21,6 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="PlatformerGodot"
+run/main_scene="res://GameScenes/TestScene.tscn"
 config/icon="res://icon.png"
 
 [input]
