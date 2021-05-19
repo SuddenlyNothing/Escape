@@ -87,7 +87,7 @@ animations = [ {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": false,
 "name": "idle",
-"speed": 10.0
+"speed": 20.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]

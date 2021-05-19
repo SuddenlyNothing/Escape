@@ -92,7 +92,7 @@ func x_input():
 	return x_input_val
 
 func move(snap):
-	move_and_slide_with_snap(Vector2(x_vel, y_vel), snap, Vector2(0, -1))
+	var _collision = move_and_slide_with_snap(Vector2(x_vel, y_vel), snap, Vector2(0, -1))
 
 func play_anim(anim):
 	sprite.play(anim)
