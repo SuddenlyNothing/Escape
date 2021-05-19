@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 export(float) var speed := 100.0
 
-var x_dir := 1.0
+var x_dir := -1.0
 var y_vel := 0
-var snap_default := 32.0
+var snap_default := Vector2.DOWN * 32.0
 var gravity := 25.0
 var max_fall_speed := 1000.0
 
@@ -18,9 +18,10 @@ func apply_gravity():
 		return
 	y_vel = clamp(y_vel+gravity, 0, max_fall_speed)
 
-func _physics_process(delta):
+func move():
 	var snap = snap_default
 	if !is_on_floor():
-		snap = 0
+		snap = Vector2.ZERO
 	apply_gravity()
 	move_and_slide_with_snap(Vector2(x_dir*speed, y_vel), snap, Vector2.UP)
+
