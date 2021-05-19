@@ -39,6 +39,7 @@ script = ExtResource( 2 )
 
 [node name="Portal" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]

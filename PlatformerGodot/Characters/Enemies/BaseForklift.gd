@@ -23,5 +23,9 @@ func move():
 	if !is_on_floor():
 		snap = Vector2.ZERO
 	apply_gravity()
-	move_and_slide_with_snap(Vector2(x_dir*speed, y_vel), snap, Vector2.UP)
+	var collision = move_and_slide_with_snap(Vector2(x_dir*speed, y_vel), snap, Vector2.UP)
 
+
+
+func _on_Area2D_body_entered(body):
+	pass
