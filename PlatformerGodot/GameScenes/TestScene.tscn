@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Terrain/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Objects/Platform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Characters/Enemies/ForkliftBlue.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Characters/Enemies/Camera.tscn" type="PackedScene" id=8]
 
 [node name="TestScene" type="Node2D"]
 
@@ -33,3 +34,6 @@ position = Vector2( 45.6153, -58.9278 )
 
 [node name="ForkliftBlue" parent="." instance=ExtResource( 7 )]
 position = Vector2( 291.099, -153.771 )
+
+[node name="Camera" parent="." instance=ExtResource( 8 )]
+position = Vector2( 155.476, -108.491 )

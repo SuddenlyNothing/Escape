@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/StaticCamera.png-84f01526fe9ecfe5797f99962726a50c.stex"
+path="res://.import/DetectionLight.png-94d9fb1d5f7e20705f92e7abd6caaa48.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/StaticCamera.png"
-dest_files=[ "res://.import/StaticCamera.png-84f01526fe9ecfe5797f99962726a50c.stex" ]
+source_file="res://Assets/Enemies/DetectionLight.png"
+dest_files=[ "res://.import/DetectionLight.png-94d9fb1d5f7e20705f92e7abd6caaa48.stex" ]
 
 [params]
 
@@ -20,8 +20,8 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
-flags/mipmaps=true
+flags/filter=true
+flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
