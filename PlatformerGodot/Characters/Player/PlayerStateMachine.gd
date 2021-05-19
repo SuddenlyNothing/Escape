@@ -28,9 +28,7 @@ func _state_logic(delta):
 func _get_transition(delta):
 	match state:
 		states.idle:
-			if Input.is_action_pressed("move_left"):
-				return states.run
-			if Input.is_action_pressed("move_right"):
+			if parent.x_input() != 0:
 				return states.run
 			if Input.is_action_pressed("jump"):
 				return states.jump
