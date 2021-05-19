@@ -5,6 +5,7 @@
 [ext_resource path="res://Assets/Objects/PlatformLine.png" type="Texture" id=3]
 
 [node name="PlatformMove" type="Line2D"]
+z_index = -1000
 points = PoolVector2Array( 0, 0, 192, 0 )
 default_color = Color( 1, 1, 1, 1 )
 texture = ExtResource( 3 )

@@ -7,7 +7,6 @@ onready var horizontal_raycast := $DirectionDependents/RayCast2D
 onready var coyote_timer := $CoyoteTimer
 onready var state_machine := $StateMachine
 onready var player_body_collision := $PlayerBodyCollision
-onready var player_idle_collision := $PlayerIdleCollision
 
 export(float) var air_move_speed := 20.0
 export(float) var ground_move_speed := 50.0
@@ -124,33 +123,21 @@ func check_death_y():
 		Global.restart()
 
 func set_idle_body():
-	player_body_collision.call_deferred("set_disabled", true)
-	player_idle_collision.call_deferred("set_disabled", false)
+	player_body_collision.shape.extents = Vector2(8, 8)
+	player_body_collision.position = Vector2(0, 8)
 
 func set_body():
-	player_body_collision.call_deferred("set_disabled", false)
-	player_idle_collision.call_deferred("set_disabled", true)
+	player_body_collision.shape.extents = Vector2(8, 12.5)
+	player_body_collision.position = Vector2(0, 3.5)
 
 func get_body_corners():
-	if get_state() == "idle":
-		var body_shape = player_idle_collision.get_shape()
-		var body_extents = body_shape.extents
-		var body_offset = player_idle_collision.position
-		var corners = PoolVector2Array()
-		corners.append(position+body_offset+body_extents)
-		corners.append(position+body_offset-body_extents)
-		corners.append(position+body_offset+Vector2(body_extents.x, -body_extents.y))
-		corners.append(position+body_offset+Vector2(-body_extents.x, body_extents.y))
-		corners.append(position+body_offset)
-		return corners
-	else:
-		var body_shape = player_body_collision.get_shape()
-		var body_extents = body_shape.extents
-		var body_offset = player_body_collision.position
-		var corners = PoolVector2Array()
-		corners.append(position+body_offset+body_extents)
-		corners.append(position+body_offset-body_extents)
-		corners.append(position+body_offset+Vector2(body_extents.x, -body_extents.y))
-		corners.append(position+body_offset+Vector2(-body_extents.x, body_extents.y))
-		corners.append(position+body_offset)
-		return corners
+	var body_shape = player_body_collision.get_shape()
+	var body_extents = body_shape.extents
+	var body_offset = player_body_collision.position
+	var corners = PoolVector2Array()
+	corners.append(position+body_offset+body_extents)
+	corners.append(position+body_offset-body_extents)
+	corners.append(position+body_offset+Vector2(body_extents.x, -body_extents.y))
+	corners.append(position+body_offset+Vector2(-body_extents.x, body_extents.y))
+	corners.append(position+body_offset)
+	return corners

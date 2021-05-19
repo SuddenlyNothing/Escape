@@ -1,14 +1,16 @@
 extends "res://Objects/PlatformMove.gd"
 
-var started = false
-
-func _ready():
-	init_tween()
-
 func _on_Area2D_body_entered(body):
 	if body.name != "Player":
 		return
-	if started:
-		return
-	started = true
+	print("Enter")
+	t.repeat = true
+	if !t.is_active():
+		tween_two_way()
 	t.start()
+
+func _on_Area2D_body_exited(body):
+	if body.name != "Player":
+		return
+	print("Exit")
+	t.repeat = false

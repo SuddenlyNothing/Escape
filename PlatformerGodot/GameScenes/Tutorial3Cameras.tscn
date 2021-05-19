@@ -67,8 +67,10 @@ position = Vector2( 864, -240 )
 
 [node name="PlatformMoveRepeat" parent="." index="15" instance=ExtResource( 7 )]
 position = Vector2( 2288, -88 )
+z_index = 0
 points = PoolVector2Array( 0, 0, 304, 0 )
 
 [node name="PlatformMoveRepeat2" parent="." index="16" instance=ExtResource( 7 )]
 position = Vector2( 2992, -88 )
+z_index = 0
 points = PoolVector2Array( 0, 0, -304, 0 )

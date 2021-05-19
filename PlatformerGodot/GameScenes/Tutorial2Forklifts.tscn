@@ -59,16 +59,19 @@ position = Vector2( 2896, -152 )
 [node name="Platform4" parent="." index="14" instance=ExtResource( 6 )]
 position = Vector2( 3056, -152 )
 
-[node name="ForkliftBlue" parent="." index="15" instance=ExtResource( 7 )]
-position = Vector2( 2520, -168 )
-
-[node name="ForkliftBlue2" parent="." index="16" instance=ExtResource( 7 )]
+[node name="ForkliftBlue2" parent="." index="15" instance=ExtResource( 7 )]
 position = Vector2( 2576, -168 )
 
-[node name="Portal2" parent="." index="17" instance=ExtResource( 3 )]
+[node name="Portal2" parent="." index="16" instance=ExtResource( 3 )]
 position = Vector2( 3656, -184 )
 next_scene = "res://GameScenes/Tutorial3Cameras.tscn"
 
-[node name="PlatformMoveRepeat" parent="." index="18" instance=ExtResource( 5 )]
+[node name="PlatformMoveRepeat" parent="." index="17" instance=ExtResource( 5 )]
 position = Vector2( 1552, -56 )
+z_index = 0
 points = PoolVector2Array( 0, 0, 288, 0 )
+
+[node name="PlatformMoveRepeat2" parent="." index="18" instance=ExtResource( 5 )]
+position = Vector2( 3088, -72 )
+z_index = 0
+points = PoolVector2Array( 0, 0, -288, 0 )
