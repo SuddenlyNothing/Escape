@@ -26,6 +26,9 @@ var snap_default := Vector2.DOWN * 32
 
 var y_vel := 0.0
 
+func _ready():
+	Global.player = self
+
 func apply_gravity():
 	if is_on_floor():
 		y_vel = clamp(y_vel+gravity, -jump_force, gravity)

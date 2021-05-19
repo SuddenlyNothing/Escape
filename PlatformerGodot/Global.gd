@@ -2,6 +2,8 @@ extends Node
 
 var current_scene = null
 
+var player = null
+
 func _ready():
 	OS.window_maximized = true
 	var root = get_tree().get_root()
@@ -10,7 +12,11 @@ func _ready():
 func goto_scene(path):
 	call_deferred("_deferred_goto_scene", path)
 
+func reset_vars():
+	player = null
+
 func _deferred_goto_scene(path):
+	reset_vars()
 	# It is now safe to remove the current scene
 	current_scene.free()
 

@@ -34,13 +34,12 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( 5, 0 )
 rotation = 3.14159
-polygon = PoolVector2Array( 18.0001, -22, -17.9999, -22, -18.0001, 22, -5.57899e-05, 22, 7.99996, 16, 8.99996, 14, 11, 9.00003 )
+polygon = PoolVector2Array( 11.0001, -22, -17.9999, -22, -18.0001, 22, -5.57899e-05, 22, 3.99995, 20, 7.99996, 16, 11, 9.00003 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
