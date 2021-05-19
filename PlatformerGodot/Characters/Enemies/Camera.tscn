@@ -7,4 +7,8 @@
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 1 )
 offset = Vector2( 1500, 0 )
+color = Color( 1, 0, 0, 1 )
+energy = 0.5
+range_layer_min = -512
 shadow_enabled = true
+shadow_color = Color( 1, 1, 1, 0 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tempBackground.png-a1b747397a48a41975cabdf5bd1e93b7.stex"
+path="res://.import/Haze.png-31aae5d0e4ff091bdbea171d1c7ee6ce.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Backgrounds/tempBackground.png"
-dest_files=[ "res://.import/tempBackground.png-a1b747397a48a41975cabdf5bd1e93b7.stex" ]
+source_file="res://Assets/Tiles/Haze.png"
+dest_files=[ "res://.import/Haze.png-31aae5d0e4ff091bdbea171d1c7ee6ce.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=true
 flags/anisotropic=false
