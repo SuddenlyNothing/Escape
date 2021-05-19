@@ -14,6 +14,7 @@ __meta__ = {
 }
 play = "res://GameScenes/Tutorial1Platforms.tscn"
 credits = "res://UI/Credits.tscn"
+tutorial = "res://GameScenes/Tutorial1Platforms.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -33,9 +34,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_top = 166.0
+margin_top = 114.0
 margin_right = 1024.0
-margin_bottom = 226.0
+margin_bottom = 174.0
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.45098, 0, 0.447059, 1 )
 custom_colors/font_outline_modulate = Color( 0.988235, 0, 1, 1 )
@@ -47,9 +48,9 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
-margin_top = 286.0
+margin_top = 234.0
 margin_right = 1024.0
-margin_bottom = 330.0
+margin_bottom = 278.0
 
 [node name="Play" type="Button" parent="VBoxContainer/CenterContainer"]
 margin_left = 457.0
@@ -66,10 +67,28 @@ enabled_focus_mode = 0
 text = "Play"
 flat = true
 
-[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
-margin_top = 390.0
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 338.0
 margin_right = 1024.0
-margin_bottom = 434.0
+margin_bottom = 382.0
+
+[node name="Tutorial" type="Button" parent="VBoxContainer/CenterContainer3"]
+margin_left = 411.0
+margin_right = 612.0
+margin_bottom = 44.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.45098, 0, 0.447059, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.392157, 0.392157, 1 )
+text = "Tutorial"
+flat = true
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 442.0
+margin_right = 1024.0
+margin_bottom = 486.0
 
 [node name="Credits" type="Button" parent="VBoxContainer/CenterContainer2"]
 margin_left = 423.0
@@ -88,4 +107,5 @@ flat = true
 [node name="FadeIn" parent="." instance=ExtResource( 4 )]
 
 [connection signal="pressed" from="VBoxContainer/CenterContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="VBoxContainer/CenterContainer3/Tutorial" to="." method="_on_Tutorial_pressed"]
 [connection signal="pressed" from="VBoxContainer/CenterContainer2/Credits" to="." method="_on_Credits_pressed"]
