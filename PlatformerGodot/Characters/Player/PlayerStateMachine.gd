@@ -10,17 +10,20 @@ func _ready():
 func _state_logic(delta):
 	parent.state_label.text = str(state)
 	parent.apply_gravity()
-	parent.move()
+	var snap = parent.snap_default
 	match state:
 		states.idle:
 			pass
 		states.jump:
 			parent.x_move_air()
+			snap = Vector2.ZERO
 		states.fall:
+			snap = Vector2.ZERO
 			parent.x_move_air()
 		states.run:
 			parent.set_facing_right()
 			parent.x_move_ground()
+	parent.move(snap)
 
 func _get_transition(delta):
 	match state:

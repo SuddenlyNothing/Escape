@@ -18,7 +18,9 @@ export(int) var gravity := 25.0
 export(int) var max_fall_speed := 1000.0
 
 var x_vel := 0.0
-var facing_right = true
+var facing_right := true
+
+var snap_default := Vector2.DOWN * 32
 
 var y_vel := 0.0
 
@@ -56,8 +58,8 @@ func x_move_input(speed):
 		apply_friction()
 	x_vel = clamp(x_vel, -max_x_move_speed, max_x_move_speed)
 
-func move():
-	move_and_slide(Vector2(x_vel, y_vel), Vector2(0, -1))
+func move(snap):
+	move_and_slide_with_snap(Vector2(x_vel, y_vel), snap, Vector2(0, -1))
 
 func play_anim(anim):
 	sprite.play(anim)
