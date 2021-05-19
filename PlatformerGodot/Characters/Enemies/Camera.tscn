@@ -19,7 +19,6 @@ shadow_enabled = true
 shadow_color = Color( 1, 1, 1, 0 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-enabled = true
 
 [node name="StaticCamera" type="Sprite" parent="."]
 z_index = 1025

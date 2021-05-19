@@ -5,7 +5,7 @@
 [ext_resource path="res://UI/FadeIn.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Background/Background.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/Platform.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/PlatformMoveRepeat.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/TutorialText.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/Portal.tscn" type="PackedScene" id=8]
 
@@ -25,21 +25,6 @@ position = Vector2( 16, -80 )
 
 [node name="Platform" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1360.32, -135.876 )
-
-[node name="MovingPlatform" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2096, -184 )
-points = PoolVector2Array( 0, 0, 256, 0 )
-speed = 100
-
-[node name="MovingPlatform2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2728, -80 )
-points = PoolVector2Array( 0, 0, 256, 0 )
-speed = 100
-
-[node name="MovingPlatform3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 3272, -136 )
-points = PoolVector2Array( 0, 0, -256, 0 )
-speed = 100
 
 [node name="TutorialText" parent="." instance=ExtResource( 7 )]
 margin_left = 1008.0
@@ -65,3 +50,15 @@ text = "Go to the next level"
 [node name="Portal" parent="." instance=ExtResource( 8 )]
 position = Vector2( 3912, -56 )
 next_scene = "res://GameScenes/Tutorial2Forklifts.tscn"
+
+[node name="PlatformMoveRepeat" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2738, -62 )
+points = PoolVector2Array( 0, 0, 256, 0 )
+
+[node name="PlatformMoveRepeat2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2096, -184 )
+points = PoolVector2Array( 0, 0, 256, 0 )
+
+[node name="PlatformMoveRepeat3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3336, -128 )
+points = PoolVector2Array( 0, 0, -256, 0 )

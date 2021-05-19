@@ -27,14 +27,14 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 14.5, 22 )
-
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 5, 11 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 14.5, 4 )
+
+[sub_resource type="OccluderPolygon2D" id=8]
+polygon = PoolVector2Array( -15, 22, 14, 22, 14, -22, -4, -22, -7, -21, -10, -18, -12, -16, -13, -14, -14, -11, -15, -9 )
 
 [node name="BaseForklift" type="KinematicBody2D" groups=[
 "forklifts",
@@ -53,9 +53,10 @@ frames = SubResource( 4 )
 frame = 2
 playing = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0.5, 0 )
 rotation = 3.14159
-shape = SubResource( 5 )
+polygon = PoolVector2Array( 15.0001, -22, -13.9999, -22, -14.0001, 22, 3.99994, 22, 6.99995, 21, 12, 16, 13, 14, 14, 11, 15, 9.00004 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -66,6 +67,10 @@ shape = SubResource( 6 )
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, 19 )
 shape = SubResource( 7 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2( 0.5, 0 )
+occluder = SubResource( 8 )
 
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="VisibilityNotifier2D" method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

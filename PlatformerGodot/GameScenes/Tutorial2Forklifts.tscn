@@ -4,7 +4,7 @@
 [ext_resource path="res://UI/TutorialText.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Portal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Characters/Enemies/Forklift.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Objects/MovingPlatform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/PlatformMoveRepeat.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Platform.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Characters/Enemies/ForkliftBlue.tscn" type="PackedScene" id=7]
 
@@ -47,33 +47,28 @@ position = Vector2( 3016, -24 )
 [node name="Forklift4" parent="." index="10" instance=ExtResource( 4 )]
 position = Vector2( 2720, -24 )
 
-[node name="MovingPlatform" parent="." index="11" instance=ExtResource( 5 )]
-position = Vector2( 1552, -56 )
-points = PoolVector2Array( 0, 0, 288, 0 )
-speed = 100
-
-[node name="MovingPlatform2" parent="." index="12" instance=ExtResource( 5 )]
-position = Vector2( 2840, -72 )
-points = PoolVector2Array( 0, 0, 288, 0 )
-
-[node name="Platform" parent="." index="13" instance=ExtResource( 6 )]
+[node name="Platform" parent="." index="11" instance=ExtResource( 6 )]
 position = Vector2( 2544, -136 )
 
-[node name="Platform2" parent="." index="14" instance=ExtResource( 6 )]
+[node name="Platform2" parent="." index="12" instance=ExtResource( 6 )]
 position = Vector2( 2736, -152 )
 
-[node name="Platform3" parent="." index="15" instance=ExtResource( 6 )]
+[node name="Platform3" parent="." index="13" instance=ExtResource( 6 )]
 position = Vector2( 2896, -152 )
 
-[node name="Platform4" parent="." index="16" instance=ExtResource( 6 )]
+[node name="Platform4" parent="." index="14" instance=ExtResource( 6 )]
 position = Vector2( 3056, -152 )
 
-[node name="ForkliftBlue" parent="." index="17" instance=ExtResource( 7 )]
+[node name="ForkliftBlue" parent="." index="15" instance=ExtResource( 7 )]
 position = Vector2( 2520, -168 )
 
-[node name="ForkliftBlue2" parent="." index="18" instance=ExtResource( 7 )]
+[node name="ForkliftBlue2" parent="." index="16" instance=ExtResource( 7 )]
 position = Vector2( 2576, -168 )
 
-[node name="Portal2" parent="." index="19" instance=ExtResource( 3 )]
+[node name="Portal2" parent="." index="17" instance=ExtResource( 3 )]
 position = Vector2( 3656, -184 )
 next_scene = "res://GameScenes/Tutorial3Cameras.tscn"
+
+[node name="PlatformMoveRepeat" parent="." index="18" instance=ExtResource( 5 )]
+position = Vector2( 1552, -56 )
+points = PoolVector2Array( 0, 0, 288, 0 )
