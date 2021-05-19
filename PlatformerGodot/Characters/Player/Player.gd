@@ -5,6 +5,7 @@ onready var state_label := $StateLabel
 onready var direction_dependents := $DirectionDependents
 onready var horizontal_raycast := $DirectionDependents/RayCast2D
 onready var coyote_timer := $CoyoteTimer
+onready var state_machine := $StateMachine
 
 export(float) var air_move_speed := 20.0
 export(float) var ground_move_speed := 50.0
@@ -109,6 +110,7 @@ func is_horizontal_colliding():
 	if horizontal_raycast.is_colliding() and is_on_wall():
 		return true
 
-
+func get_state():
+	return state_machine.state
 
 
