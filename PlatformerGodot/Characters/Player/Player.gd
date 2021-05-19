@@ -27,7 +27,7 @@ var facing_right := true
 var snap_default := Vector2.DOWN * 32
 
 var y_vel := 0.0
-var max_y := 20000
+var max_y := 200
 
 func _ready():
 	Global.player = self

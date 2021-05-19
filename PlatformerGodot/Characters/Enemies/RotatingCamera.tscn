@@ -15,4 +15,6 @@ repeat = true
 playback/repeat = true
 
 [node name="RotatingCamera" type="Sprite" parent="." index="4"]
+z_index = 1025
 texture = ExtResource( 3 )
+offset = Vector2( 0, -5 )

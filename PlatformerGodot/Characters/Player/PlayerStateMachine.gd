@@ -76,7 +76,6 @@ func _exit_state(old_state, new_state):
 	match old_state:
 		states.idle:
 			parent.set_body()
-			print('exit idle')
 		states.jump:
 			pass
 		states.fall:

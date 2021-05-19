@@ -3,7 +3,7 @@ extends Line2D
 onready var platform := $Platform
 onready var t := $Tween
 
-export(int) var speed := 10
+export(int) var speed := 100
 
 func _ready():
 	init_tween()

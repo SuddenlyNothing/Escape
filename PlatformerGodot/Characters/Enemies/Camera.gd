@@ -32,5 +32,6 @@ func is_pos_visible(pos):
 	raycast.force_raycast_update()
 	if raycast.is_colliding():
 		if raycast.get_collider().name == "Player":
-			return true
+			if player.get_state() != "idle":
+				return true
 	return false

@@ -2,11 +2,16 @@ extends KinematicBody2D
 
 export(float) var speed := 100.0
 
+onready var v_n := $VisibilityNotifier2D
+
 var x_dir := -1.0
 var y_vel := 0
 var snap_default := Vector2.DOWN * 32.0
 var gravity := 25.0
 var max_fall_speed := 1000.0
+
+func _ready():
+	v_n.set_parent(self)
 
 func flip():
 	x_dir *= -1
@@ -29,3 +34,8 @@ func _on_Area2D_body_entered(body):
 	if body.name != "Player":
 		return
 	Global.restart()
+
+
+func _on_Area2D_area_entered(area):
+	if area.get_parent().is_in_group("forklifts"):
+		flip()
