@@ -6,7 +6,7 @@
 extents = Vector2( 48, 4.5 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
-polygon = PoolVector2Array( -48, -4, 48, -4, 48, 4, -48, 4 )
+polygon = PoolVector2Array( -48, -4, 48, -4, 48, -4, -48, -4 )
 
 [node name="Platform" type="KinematicBody2D"]
 motion/sync_to_physics = true
