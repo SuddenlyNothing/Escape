@@ -6,17 +6,20 @@
 extents = Vector2( 48, 4.5 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
-polygon = PoolVector2Array( -48, -4, 48, -4, 48, -4, -48, -4 )
+polygon = PoolVector2Array( -48, 4, 48, 4, 48, 4, -48, 4 )
 
 [node name="Platform" type="KinematicBody2D"]
 motion/sync_to_physics = true
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+offset = Vector2( 0, 4.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 4.5 )
 shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2( 0, -4 )
 occluder = SubResource( 2 )

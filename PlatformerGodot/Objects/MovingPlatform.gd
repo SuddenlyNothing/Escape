@@ -7,6 +7,8 @@ export(int) var speed := 100
 
 func _ready():
 	init_tween()
+	t.repeat = true
+	t.start()
 
 func init_tween():
 	var end_point := get_point_position(1)
@@ -15,4 +17,3 @@ func init_tween():
 		Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	t.interpolate_property(platform, "position", end_point, platform.position, duration,
 		Tween.TRANS_SINE, Tween.EASE_IN_OUT, duration)
-	t.start()

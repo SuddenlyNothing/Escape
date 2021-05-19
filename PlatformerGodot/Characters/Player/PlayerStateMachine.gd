@@ -9,8 +9,8 @@ func _ready():
 
 func _state_logic(delta):
 	parent.check_death_y()
-	parent.state_label.text = str(state) +" "+var2str(Vector2(parent.x_vel, parent.y_vel))
 	parent.apply_gravity()
+	parent.state_label.text = str(state) +" "+var2str(Vector2(parent.x_vel, parent.y_vel))+"\n"+"is_on_floor "+str(parent.is_on_floor())
 	var snap = parent.snap_default
 	match state:
 		states.idle:
@@ -33,6 +33,8 @@ func _get_transition(delta):
 				return states.run
 			if Input.is_action_pressed("jump"):
 				return states.jump
+			if !parent.is_on_floor():
+				return states.fall
 		states.jump:
 			if parent.y_vel > 0:
 				return states.fall

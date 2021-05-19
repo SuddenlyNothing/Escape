@@ -5,6 +5,7 @@
 [ext_resource path="res://Assets/Objects/PlatformLine.png" type="Texture" id=3]
 
 [node name="MovingPlatform" type="Line2D"]
+position = Vector2( 0, 4.5 )
 points = PoolVector2Array( 0, 0, 107.094, -23.342 )
 default_color = Color( 1, 1, 1, 1 )
 texture = ExtResource( 3 )
@@ -13,10 +14,9 @@ script = ExtResource( 2 )
 speed = 50
 
 [node name="Platform" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -4.5 )
 
 [node name="Tween" type="Tween" parent="."]
-repeat = true
 playback_process_mode = 0
-playback/repeat = true
 
 [editable path="Platform"]
