@@ -25,6 +25,7 @@ var facing_right := true
 var snap_default := Vector2.DOWN * 32
 
 var y_vel := 0.0
+var max_y := 200
 
 func _ready():
 	Global.player = self
@@ -116,4 +117,6 @@ func is_horizontal_colliding():
 func get_state():
 	return state_machine.state
 
-
+func check_death_y():
+	if position.y > max_y:
+		Global.restart()

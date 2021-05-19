@@ -8,6 +8,7 @@ func _ready():
 	call_deferred("set_state", states.idle)
 
 func _state_logic(delta):
+	parent.check_death_y()
 	parent.state_label.text = str(state)
 	parent.apply_gravity()
 	var snap = parent.snap_default

@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Characters/Enemies/BaseForklift.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Enemies/ForkliftSpritesheetBlue.png" type="Texture" id=2]
+[ext_resource path="res://Characters/Enemies/ForkliftBlue.gd" type="Script" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 1
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 46, 44 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 1
+atlas = ExtResource( 2 )
+region = Rect2( 46, 0, 46, 44 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 1
+atlas = ExtResource( 2 )
+region = Rect2( 92, 0, 46, 44 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 1, 1 )
+
+[node name="ForkliftBlue" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" parent="." index="0"]
+visible = false
+frame = 0
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="." index="3"]
+frames = SubResource( 4 )
+frame = 2
+playing = true
+
+[node name="Area2D2" type="Area2D" parent="." index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" index="0"]
+position = Vector2( -4, 24 )
+shape = SubResource( 5 )
+
+[connection signal="body_exited" from="Area2D2" to="." method="_on_Area2D2_body_exited"]
