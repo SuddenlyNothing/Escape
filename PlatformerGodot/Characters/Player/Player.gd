@@ -24,7 +24,7 @@ export(float) var max_fall_speed := 1000.0
 var x_vel := 0.0
 var facing_right := true
 
-var snap_default := Vector2.DOWN * 32
+var snap_default := Vector2.DOWN * 31
 
 var y_vel := 0.0
 var max_y := 200

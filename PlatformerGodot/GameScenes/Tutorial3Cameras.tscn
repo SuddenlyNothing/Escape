@@ -39,28 +39,36 @@ position = Vector2( 2240, -272 )
 position = Vector2( 2616, -272 )
 
 [node name="Label" parent="." index="11" instance=ExtResource( 4 )]
-margin_left = 72.0
-margin_top = -128.0
-margin_right = 288.0
-margin_bottom = -35.0
+margin_left = -184.0
+margin_top = -112.0
+margin_right = 0.0
+margin_bottom = -19.0
 text = "Don't get caught by the cameras"
 autowrap = true
 
 [node name="Label2" parent="." index="12" instance=ExtResource( 4 )]
 margin_left = 1200.0
-margin_top = -176.0
+margin_top = -80.0
 margin_right = 1928.0
-margin_bottom = -51.0
+margin_bottom = 45.0
 text = "When you aren't moving the cameras can't see you"
 autowrap = true
 
-[node name="RotatingCamera" parent="." index="13" instance=ExtResource( 5 )]
+[node name="Label3" parent="." index="13" instance=ExtResource( 4 )]
+margin_left = 3096.0
+margin_top = -64.0
+margin_right = 3256.0
+margin_bottom = -35.0
+text = "Good Luck!"
+autowrap = true
+
+[node name="RotatingCamera" parent="." index="14" instance=ExtResource( 5 )]
 position = Vector2( 864, -240 )
 
-[node name="MovingPlatform" parent="." index="14" instance=ExtResource( 7 )]
+[node name="MovingPlatform" parent="." index="15" instance=ExtResource( 7 )]
 position = Vector2( 2288, -88 )
 points = PoolVector2Array( 0, 0, 296, 0 )
 
-[node name="MovingPlatform2" parent="." index="15" instance=ExtResource( 7 )]
+[node name="MovingPlatform2" parent="." index="16" instance=ExtResource( 7 )]
 position = Vector2( 2960, -88 )
 points = PoolVector2Array( 0, 0, -296, 0 )

@@ -35,7 +35,3 @@ func _on_Area2D_body_entered(body):
 		return
 	Global.restart()
 
-
-func _on_Area2D_area_entered(area):
-	if area.get_parent().is_in_group("forklifts"):
-		flip()

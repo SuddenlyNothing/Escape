@@ -9,7 +9,7 @@ func _ready():
 
 func _state_logic(delta):
 	parent.check_death_y()
-	parent.state_label.text = str(state)
+	parent.state_label.text = str(state) +" "+var2str(Vector2(parent.x_vel, parent.y_vel))
 	parent.apply_gravity()
 	var snap = parent.snap_default
 	match state:
