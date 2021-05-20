@@ -9,7 +9,7 @@ var max_fall_speed := 1000
 
 var moving := false
 
-var x_speed := 200
+var x_speed := 100
 var friction := 15
 
 func move():

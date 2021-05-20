@@ -3,8 +3,8 @@ extends "res://Characters/Enemies/Camera.gd"
 onready var tween := $Tween
 
 export(float) var rotation_speed := 30.0
-export(int) var rotation_start := 51
-export(int) var rotation_end := 141
+export(int) var rotation_start := 45
+export(int) var rotation_end := 135
 
 func _ready():
 	init_tween()

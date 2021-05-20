@@ -33,20 +33,25 @@ extents = Vector2( 1, 1 )
 [node name="ForkliftBlue" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
-[node name="AnimatedSprite" parent="." index="1"]
+[node name="AnimatedSprite" parent="Flip" index="0"]
 visible = false
-frame = 2
 
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="." index="3"]
+[node name="LightOccluder2D" parent="Flip" index="2"]
+visible = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Flip" index="3"]
 position = Vector2( -8.5, 0 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
-[node name="Area2D2" type="Area2D" parent="." index="4"]
+[node name="Area2D2" type="Area2D" parent="." index="3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" index="0"]
-position = Vector2( -12, 25 )
+position = Vector2( -6, 25 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2" index="1"]
+position = Vector2( 7, 25 )
 shape = SubResource( 5 )
 
 [connection signal="body_exited" from="Area2D2" to="." method="_on_Area2D2_body_exited"]

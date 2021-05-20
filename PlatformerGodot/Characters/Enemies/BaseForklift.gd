@@ -3,6 +3,7 @@ extends KinematicBody2D
 export(float) var speed := 100.0
 
 onready var v_n := $VisibilityNotifier2D
+onready var flip := $Flip
 
 var x_dir := -1.0
 var y_vel := 0
@@ -15,7 +16,7 @@ func _ready():
 
 func flip():
 	x_dir *= -1
-	scale.x *= -1
+	flip.scale.x *= -1
 
 func apply_gravity():
 	if is_on_floor():
