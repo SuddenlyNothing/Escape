@@ -20,10 +20,12 @@ export(float) var jump_force := 600.0
 export(float) var gravity := 25.0
 export(float) var max_fall_speed := 1000.0
 
+export(float) var inertia := 250
+
 var x_vel := 0.0
 var facing_right := true
 
-var snap_default := Vector2.DOWN * 31
+var snap_default := Vector2.DOWN * 15
 
 var y_vel := 0.0
 var max_y := 200 # 200
@@ -98,7 +100,12 @@ func x_input():
 	return x_input_val
 
 func move(snap):
-	var _collision = move_and_slide_with_snap(Vector2(x_vel, y_vel), snap, Vector2(0, -1))
+	var _collision = move_and_slide_with_snap(Vector2(x_vel, y_vel), snap, Vector2(0, -1),
+		false, 4, PI/4, false)
+	for index in get_slide_count():
+		var collision = get_slide_collision(index)
+		if collision.collider.is_in_group("pushables"):
+			collision.collider.apply_force(-collision.normal * inertia)
 
 func play_anim(anim):
 	sprite.play(anim)
