@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Characters/Enemies/ForkliftBase.gd" type="Script" id=1]
 [ext_resource path="res://Characters/Enemies/VisibilityNotifier2D.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Enemies/ForkliftSpritesheet.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sounds/SFX/DriveLoop.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 14.5, 22 )
@@ -74,6 +75,15 @@ shape = SubResource( 7 )
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Flip"]
 position = Vector2( 0.5, 0 )
 occluder = SubResource( 8 )
+
+[node name="DriveLoop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+pitch_scale = 0.5
+autoplay = true
+max_distance = 500.0
+attenuation = 2.0
+bus = "SFX"
 
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="VisibilityNotifier2D" method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="body_entered" from="Flip/Area2D" to="." method="_on_Area2D_body_entered"]
