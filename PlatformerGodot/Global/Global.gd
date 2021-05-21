@@ -47,6 +47,4 @@ func _deferred_goto_scene(path):
 	get_tree().paused = false
 
 func restart(transition_texture = null, message = ""):
-	print(transition_texture)
-	print("yo")
 	goto_scene(current_scene.filename, transition_texture, message)

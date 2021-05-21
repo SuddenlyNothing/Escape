@@ -27,7 +27,7 @@ export(String) var death_fall_message := "You Fell"
 var x_vel := 0.0
 var facing_right := true
 
-var snap_default := Vector2.DOWN * 15
+var snap_default := Vector2.DOWN * 31
 
 var y_vel := 0.0
 var max_y := 200 # 200

@@ -35,7 +35,6 @@ script = ExtResource( 3 )
 
 [node name="AnimatedSprite" parent="Flip" index="0"]
 visible = false
-frame = 1
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Flip" index="3"]
 position = Vector2( -8.5, 0 )
