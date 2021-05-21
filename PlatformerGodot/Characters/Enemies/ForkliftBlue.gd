@@ -1,4 +1,4 @@
-extends "res://Characters/Enemies/BaseForklift.gd"
+extends ForkliftBase
 
 func _on_Area2D2_body_exited(body):
 	if body.name == "Player":

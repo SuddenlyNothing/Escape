@@ -1,4 +1,4 @@
-extends "res://Characters/Enemies/BaseForklift.gd"
+extends ForkliftBase
 
 func _physics_process(delta):
 	if is_on_wall():

@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name ForkliftBase
 
 export(float) var speed := 100.0
 
