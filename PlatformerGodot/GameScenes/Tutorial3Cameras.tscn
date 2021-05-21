@@ -13,30 +13,30 @@
 [node name="TileMap" parent="." index="1"]
 tile_data = PoolIntArray( -262150, 6, 0, -262149, 6, 0, -262148, 6, 0, -262147, 6, 0, -262146, 6, 0, -262145, 6, 0, -196614, 5, 0, -196613, 5, 0, -196612, 5, 0, -196611, 5, 0, -196610, 5, 0, -196609, 5, 0, -131078, 5, 0, -131077, 5, 0, -131076, 5, 0, -131075, 5, 0, -131074, 5, 0, -131073, 5, 0, -196596, 6, 0, -196591, 6, 0, -196590, 6, 0, -196589, 6, 0, -196588, 6, 0, -196587, 6, 0, -196583, 6, 0, -196582, 6, 0, -196581, 6, 0, -196580, 6, 0, -196576, 6, 0, -196575, 6, 0, -196574, 6, 0, -196573, 6, 0, -196572, 6, 0, -196571, 6, 0, -196570, 6, 0, -196569, 6, 0, -196568, 6, 0, -196567, 6, 0, -196566, 6, 0, -196565, 6, 0, -196564, 6, 0, -196563, 6, 0, -196562, 6, 0, -196561, 6, 0, -196560, 6, 0, -196559, 6, 0, -196558, 6, 0, -196557, 6, 0, -196556, 6, 0, -196555, 6, 0, -196554, 6, 0, -196553, 6, 0, -196552, 6, 0, -196551, 6, 0, -196550, 6, 0, -196549, 6, 0, -196548, 6, 0, -196547, 6, 0, -196546, 6, 0, -196545, 6, 0, -196544, 6, 0, -196543, 6, 0, -196542, 6, 0, -196541, 6, 0, -196540, 6, 0, -196539, 6, 0, -196505, 6, 0, -196504, 6, 0, -196503, 6, 0, -196502, 6, 0, -196501, 6, 0, -196500, 6, 0, -196499, 6, 0, -196498, 6, 0, -65542, 5, 0, -65541, 5, 0, -65540, 5, 0, -65539, 5, 0, -65538, 5, 0, -65537, 5, 0, -131062, 6, 0, -131061, 6, 0, -131060, 5, 0, -131059, 6, 0, -131058, 6, 0, -131057, 6, 0, -131056, 6, 0, -131055, 5, 0, -131054, 5, 0, -131053, 5, 0, -131052, 5, 0, -131051, 5, 0, -131040, 5, 0, -131039, 5, 0, -131038, 5, 0, -131037, 5, 0, -131036, 5, 0, -131035, 5, 0, -131034, 5, 0, -131033, 5, 0, -131032, 5, 0, -131031, 5, 0, -131030, 5, 0, -131029, 5, 0, -131028, 5, 0, -131027, 5, 0, -131026, 5, 0, -131025, 5, 0, -131024, 5, 0, -131023, 5, 0, -131022, 5, 0, -131021, 5, 0, -131020, 5, 0, -131019, 5, 0, -131018, 5, 0, -131017, 5, 0, -131016, 5, 0, -131015, 5, 0, -131014, 5, 0, -131013, 5, 0, -131012, 5, 0, -131011, 5, 0, -131010, 5, 0, -131009, 5, 0, -131008, 5, 0, -131007, 5, 0, -131006, 5, 0, -131005, 5, 0, -131004, 5, 0, -131003, 5, 0, -130969, 5, 0, -130968, 5, 0, -130967, 5, 0, -130966, 5, 0, -130965, 5, 0, -130964, 5, 0, -130963, 5, 0, -130962, 5, 0, -6, 5, 0, -5, 5, 0, -4, 5, 0, -3, 5, 0, -2, 5, 0, -1, 5, 0, -65536, 6, 0, -65535, 6, 0, -65534, 6, 0, -65533, 6, 0, -65532, 6, 0, -65531, 6, 0, -65530, 6, 0, -65529, 6, 0, -65528, 6, 0, -65527, 6, 0, -65526, 5, 0, -65525, 5, 0, -65524, 5, 0, -65523, 5, 0, -65522, 5, 0, -65521, 5, 0, -65520, 5, 0, -65519, 5, 0, -65518, 5, 0, -65517, 5, 0, -65516, 5, 0, -65515, 5, 0, -65514, 6, 0, -65513, 6, 0, -65512, 6, 0, -65511, 6, 0, -65510, 6, 0, -65509, 6, 0, -65508, 6, 0, -65507, 6, 0, -65506, 6, 0, -65505, 6, 0, -65504, 5, 0, -65503, 5, 0, -65502, 5, 0, -65501, 5, 0, -65500, 5, 0, -65499, 5, 0, -65498, 5, 0, -65497, 5, 0, -65496, 5, 0, -65495, 5, 0, -65494, 5, 0, -65493, 5, 0, -65492, 5, 0, -65491, 5, 0, -65490, 5, 0, -65489, 5, 0, -65488, 5, 0, -65487, 5, 0, -65486, 5, 0, -65485, 5, 0, -65484, 5, 0, -65483, 5, 0, -65482, 5, 0, -65481, 5, 0, -65480, 5, 0, -65479, 5, 0, -65478, 5, 0, -65477, 5, 0, -65476, 5, 0, -65475, 5, 0, -65474, 5, 0, -65473, 5, 0, -65472, 5, 0, -65471, 5, 0, -65470, 5, 0, -65469, 5, 0, -65468, 5, 0, -65467, 5, 0, -65433, 5, 0, -65432, 5, 0, -65431, 5, 0, -65430, 5, 0, -65429, 5, 0, -65428, 5, 0, -65427, 5, 0, -65426, 5, 0, 65530, 5, 0, 65531, 5, 0, 65532, 5, 0, 65533, 5, 0, 65534, 5, 0, 65535, 5, 0, 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 5, 0, 5, 5, 0, 6, 5, 0, 7, 5, 0, 8, 5, 0, 9, 5, 0, 10, 5, 0, 11, 5, 0, 12, 5, 0, 13, 5, 0, 14, 5, 0, 15, 5, 0, 16, 5, 0, 17, 5, 0, 18, 5, 0, 19, 5, 0, 20, 5, 0, 21, 5, 0, 22, 5, 0, 23, 5, 0, 24, 5, 0, 25, 5, 0, 26, 5, 0, 27, 5, 0, 28, 5, 0, 29, 5, 0, 30, 5, 0, 31, 5, 0, 32, 5, 0, 33, 5, 0, 34, 5, 0, 35, 5, 0, 36, 5, 0, 37, 5, 0, 38, 5, 0, 39, 5, 0, 40, 5, 0, 41, 5, 0, 42, 5, 0, 43, 5, 0, 44, 5, 0, 45, 5, 0, 46, 5, 0, 47, 5, 0, 48, 5, 0, 49, 5, 0, 50, 5, 0, 51, 5, 0, 52, 5, 0, 53, 5, 0, 54, 5, 0, 55, 5, 0, 56, 5, 0, 57, 5, 0, 58, 5, 0, 59, 5, 0, 60, 5, 0, 61, 5, 0, 62, 5, 0, 63, 5, 0, 64, 5, 0, 65, 5, 0, 66, 5, 0, 67, 5, 0, 68, 5, 0, 69, 5, 0, 103, 5, 0, 104, 5, 0, 105, 5, 0, 106, 5, 0, 107, 5, 0, 108, 5, 0, 109, 5, 0, 110, 5, 0 )
 
-[node name="Camera" parent="." index="4" instance=ExtResource( 2 )]
+[node name="Camera" parent="." index="3" instance=ExtResource( 2 )]
 position = Vector2( 488, -144 )
 rot_deg = 143
 
-[node name="Camera2" parent="." index="5" instance=ExtResource( 2 )]
+[node name="Camera2" parent="." index="4" instance=ExtResource( 2 )]
 position = Vector2( 2304, -232 )
 
-[node name="Camera5" parent="." index="6" instance=ExtResource( 2 )]
+[node name="Camera5" parent="." index="5" instance=ExtResource( 2 )]
 position = Vector2( 3232, -232 )
 rot_deg = 135
 
-[node name="Platform" parent="." index="7" instance=ExtResource( 3 )]
+[node name="Platform" parent="." index="6" instance=ExtResource( 3 )]
 position = Vector2( 480, -168 )
 
-[node name="Platform2" parent="." index="8" instance=ExtResource( 3 )]
+[node name="Platform2" parent="." index="7" instance=ExtResource( 3 )]
 position = Vector2( 864, -248 )
 
-[node name="Platform3" parent="." index="9" instance=ExtResource( 3 )]
+[node name="Platform3" parent="." index="8" instance=ExtResource( 3 )]
 position = Vector2( 2304, -256 )
 
-[node name="Platform4" parent="." index="10" instance=ExtResource( 3 )]
+[node name="Platform4" parent="." index="9" instance=ExtResource( 3 )]
 position = Vector2( 3232, -256 )
 
-[node name="Label" parent="." index="11" instance=ExtResource( 4 )]
+[node name="Label" parent="." index="10" instance=ExtResource( 4 )]
 margin_left = -184.0
 margin_top = -112.0
 margin_right = 0.0
@@ -44,7 +44,7 @@ margin_bottom = -19.0
 text = "Don't get caught by the cameras"
 autowrap = true
 
-[node name="Label2" parent="." index="12" instance=ExtResource( 4 )]
+[node name="Label2" parent="." index="11" instance=ExtResource( 4 )]
 margin_left = 1200.0
 margin_top = -80.0
 margin_right = 1928.0
@@ -52,7 +52,7 @@ margin_bottom = 45.0
 text = "When you aren't moving the cameras can't see you"
 autowrap = true
 
-[node name="Label3" parent="." index="13" instance=ExtResource( 4 )]
+[node name="Label3" parent="." index="12" instance=ExtResource( 4 )]
 margin_left = 3344.0
 margin_top = -64.0
 margin_right = 3504.0
@@ -60,22 +60,22 @@ margin_bottom = -35.0
 text = "Good Luck!"
 autowrap = true
 
-[node name="RotatingCamera" parent="." index="14" instance=ExtResource( 5 )]
+[node name="RotatingCamera" parent="." index="13" instance=ExtResource( 5 )]
 position = Vector2( 864, -232 )
 
-[node name="PlatformMoveRepeat" parent="." index="15" instance=ExtResource( 7 )]
+[node name="PlatformMoveRepeat" parent="." index="14" instance=ExtResource( 7 )]
 position = Vector2( 2304, -96 )
 z_index = 0
 points = PoolVector2Array( 0, 4, 400, 4 )
 
-[node name="PlatformMoveRepeat2" parent="." index="16" instance=ExtResource( 7 )]
+[node name="PlatformMoveRepeat2" parent="." index="15" instance=ExtResource( 7 )]
 position = Vector2( 3232, -96 )
 z_index = 0
 points = PoolVector2Array( 0, 4, -400, 4 )
 
-[node name="Portal" parent="." index="17" instance=ExtResource( 6 )]
+[node name="Portal" parent="." index="16" instance=ExtResource( 6 )]
 position = Vector2( 3536, -120 )
 next_scene = "res://UI/MainMenu.tscn"
 
-[node name="Platform5" parent="." index="18" instance=ExtResource( 3 )]
+[node name="Platform5" parent="." index="17" instance=ExtResource( 3 )]
 position = Vector2( 256, -112 )

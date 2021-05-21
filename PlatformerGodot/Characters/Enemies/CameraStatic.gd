@@ -7,4 +7,4 @@ func _process(delta):
 		if player == null:
 			player = Global.player
 		if is_player_in_vision():
-			Global.restart()
+			found_player()

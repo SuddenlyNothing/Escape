@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Fonts/Glassibox.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://UI/FadeIn.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Fonts/Buttons.tres" type="DynamicFont" id=3]
 [ext_resource path="res://UI/Credits.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Fonts/Title.tres" type="DynamicFont" id=5]
@@ -89,7 +88,5 @@ __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
-
-[node name="FadeIn" parent="." instance=ExtResource( 2 )]
 
 [connection signal="pressed" from="VBoxContainer/CenterContainer/Menu" to="." method="_on_Menu_pressed"]

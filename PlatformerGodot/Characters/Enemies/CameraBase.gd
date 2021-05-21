@@ -7,6 +7,8 @@ onready var rotation_dependents := $RotationDependents
 onready var camera_flip := $CameraFlip
 
 export(int, -360, 360) var rot_deg := 45
+export(String, FILE, "*.png") var death_transition := "res://Assets/DeathTransitions/Caught.png"
+export(String) var death_message := "You Were Caught"
 
 var track_player := false
 var fov := 36.86989765
@@ -62,3 +64,6 @@ func is_pos_visible(pos):
 			if player.get_state() != "idle":
 				return true
 	return false
+
+func found_player():
+	Global.restart(death_transition, death_message)

@@ -2,6 +2,8 @@ extends KinematicBody2D
 class_name ForkliftBase
 
 export(float) var speed := 100.0
+export(String, FILE, "*.png") var death_transition
+export(String) var death_message := "You Were Caught"
 
 onready var v_n := $VisibilityNotifier2D
 onready var flip := $Flip
@@ -35,5 +37,5 @@ func move():
 func _on_Area2D_body_entered(body):
 	if body.name != "Player":
 		return
-	Global.restart()
+	Global.restart(death_transition, death_message)
 

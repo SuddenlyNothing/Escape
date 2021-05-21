@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Fonts/Title.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Fonts/Buttons.tres" type="DynamicFont" id=2]
 [ext_resource path="res://UI/MainMenu.gd" type="Script" id=3]
-[ext_resource path="res://UI/FadeIn.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Sounds/Soundtracks/GatsbyWalkerLoop.wav" type="AudioStream" id=5]
 
 [node name="MainMenu" type="Control"]
@@ -105,8 +104,6 @@ custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0.392157, 0.392157, 0.392157, 1 )
 text = "Credits"
 flat = true
-
-[node name="FadeIn" parent="." instance=ExtResource( 4 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )

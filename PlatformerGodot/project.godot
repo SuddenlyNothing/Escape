@@ -50,7 +50,7 @@ config/icon="res://Assets/Tiles/grass.png"
 
 [autoload]
 
-Global="*res://Global.gd"
+Global="*res://Global/Global.tscn"
 
 [input]
 

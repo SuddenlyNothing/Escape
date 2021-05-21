@@ -21,6 +21,9 @@ export(float) var jump_force := 600.0
 export(float) var gravity := 25.0
 export(float) var max_fall_speed := 1000.0
 
+export(String, FILE, "*.png") var death_fall_transition
+export(String) var death_fall_message := "You Fell"
+
 var x_vel := 0.0
 var facing_right := true
 
@@ -127,7 +130,7 @@ func get_state():
 
 func check_death_y():
 	if position.y > max_y:
-		Global.restart()
+		Global.restart(death_fall_transition, death_fall_message)
 
 func set_idle_body():
 	player_body_collision.shape.set_extents(Vector2(8, 8))
