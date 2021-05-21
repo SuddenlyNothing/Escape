@@ -115,7 +115,6 @@ current = true
 zoom = Vector2( 0.5, 0.5 )
 
 [node name="StateLabel" type="Label" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 14.0
 __meta__ = {
@@ -123,5 +122,9 @@ __meta__ = {
 }
 
 [node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="JumpBuffer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true

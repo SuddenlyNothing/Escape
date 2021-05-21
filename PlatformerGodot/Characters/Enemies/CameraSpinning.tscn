@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Characters/Enemies/CameraStatic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Enemies/CameraSpinning.png" type="Texture" id=2]
+[ext_resource path="res://Characters/Enemies/CameraSpinning.gd" type="Script" id=3]
+
+[node name="CameraSpinning" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+rot_speed = 200
+
+[node name="StaticCamera" parent="." index="2"]
+visible = false
+
+[node name="CameraSpinning" type="Sprite" parent="." index="4"]
+z_index = 1025
+texture = ExtResource( 2 )

@@ -5,3 +5,7 @@
 
 [node name="PlatformMoveRepeat" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+
+[node name="Tween" parent="." index="1"]
+repeat = true
+playback/repeat = true

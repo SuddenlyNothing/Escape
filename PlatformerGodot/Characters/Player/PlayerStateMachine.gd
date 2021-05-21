@@ -1,4 +1,4 @@
-extends "res://Characters/StateMachine.gd"
+extends StateMachine
 
 func _ready():
 	add_state("idle")
@@ -21,6 +21,7 @@ func _state_logic(delta):
 		states.fall:
 			snap = Vector2.ZERO
 			parent.x_move_air()
+			parent.start_jump_buffer()
 		states.run:
 			parent.set_facing_right()
 			parent.x_move_ground()
@@ -35,6 +36,8 @@ func _get_transition(delta):
 				return states.jump
 			if !parent.is_on_floor():
 				return states.fall
+			if parent.is_jump_buffer_active():
+				return states.jump
 		states.jump:
 			if parent.y_vel > 0:
 				return states.fall
@@ -55,6 +58,8 @@ func _get_transition(delta):
 			if parent.x_vel == 0:
 				return states.idle
 			if Input.is_action_pressed("jump"):
+				return states.jump
+			if parent.is_jump_buffer_active():
 				return states.jump
 	return null
 

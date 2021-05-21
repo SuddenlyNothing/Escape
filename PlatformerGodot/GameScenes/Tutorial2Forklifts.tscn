@@ -48,30 +48,27 @@ position = Vector2( 3016, -24 )
 position = Vector2( 2720, -24 )
 
 [node name="Platform" parent="." index="11" instance=ExtResource( 6 )]
-position = Vector2( 2544, -136 )
+position = Vector2( 2560, -136 )
 
 [node name="Platform2" parent="." index="12" instance=ExtResource( 6 )]
-position = Vector2( 2736, -152 )
+position = Vector2( 2784, -152 )
 
-[node name="Platform3" parent="." index="13" instance=ExtResource( 6 )]
-position = Vector2( 2896, -152 )
+[node name="Platform4" parent="." index="13" instance=ExtResource( 6 )]
+position = Vector2( 3008, -152 )
 
-[node name="Platform4" parent="." index="14" instance=ExtResource( 6 )]
-position = Vector2( 3056, -152 )
-
-[node name="ForkliftBlue2" parent="." index="15" instance=ExtResource( 7 )]
+[node name="ForkliftBlue2" parent="." index="14" instance=ExtResource( 7 )]
 position = Vector2( 2576, -168 )
 
-[node name="Portal2" parent="." index="16" instance=ExtResource( 3 )]
+[node name="Portal2" parent="." index="15" instance=ExtResource( 3 )]
 position = Vector2( 3656, -184 )
 next_scene = "res://GameScenes/Tutorial3Cameras.tscn"
 
-[node name="PlatformMoveRepeat" parent="." index="17" instance=ExtResource( 5 )]
-position = Vector2( 1552, -56 )
+[node name="PlatformMoveRepeat" parent="." index="16" instance=ExtResource( 5 )]
+position = Vector2( 1568, -64 )
 z_index = 0
-points = PoolVector2Array( 0, 0, 288, 0 )
+points = PoolVector2Array( 0, 4, 256, 4 )
 
-[node name="PlatformMoveRepeat2" parent="." index="18" instance=ExtResource( 5 )]
-position = Vector2( 3088, -72 )
+[node name="PlatformMoveRepeat2" parent="." index="17" instance=ExtResource( 5 )]
+position = Vector2( 3072, -72 )
 z_index = 0
-points = PoolVector2Array( 0, 0, -288, 0 )
+points = PoolVector2Array( 0, 4, -288, 4 )

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Characters/Enemies/Camera.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Characters/Enemies/RotatingCamera.gd" type="Script" id=2]
+[ext_resource path="res://Characters/Enemies/CameraStatic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Characters/Enemies/CameraRotating.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Enemies/RotatingCamera.png" type="Texture" id=3]
 
 [node name="RotatingCamera" instance=ExtResource( 1 )]

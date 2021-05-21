@@ -1,4 +1,4 @@
-extends "res://Characters/Enemies/Camera.gd"
+extends StaticCamera
 
 onready var tween := $Tween
 

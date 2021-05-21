@@ -1,4 +1,10 @@
-extends "res://Objects/PlatformMove.gd"
+tool
+extends PlatformMove
+
+func _process(_delta):
+	if Engine.editor_hint:
+		offset_end_point()
+		show_platform_end()
 
 func _on_Area2D_body_entered(body):
 	if body.name != "Player":
