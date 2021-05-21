@@ -1,4 +1,4 @@
-extends StaticCamera
+extends CameraStatic
 
 onready var tween := $Tween
 

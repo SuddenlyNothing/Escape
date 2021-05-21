@@ -1,5 +1,5 @@
 tool
-extends StaticCamera
+extends CameraStatic
 
 export(int) var rot_speed := 50
 

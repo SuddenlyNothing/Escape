@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "CameraBase",
+"language": "GDScript",
+"path": "res://Characters/Enemies/CameraBase.gd"
+}, {
+"base": "CameraBase",
+"class": "CameraStatic",
+"language": "GDScript",
+"path": "res://Characters/Enemies/CameraStatic.gd"
+}, {
 "base": "Line2D",
 "class": "PlatformMove",
 "language": "GDScript",
@@ -18,16 +28,12 @@ _global_script_classes=[ {
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://Characters/StateMachine.gd"
-}, {
-"base": "Node2D",
-"class": "StaticCamera",
-"language": "GDScript",
-"path": "res://Characters/Enemies/CameraStatic.gd"
 } ]
 _global_script_class_icons={
+"CameraBase": "",
+"CameraStatic": "",
 "PlatformMove": "",
-"StateMachine": "",
-"StaticCamera": ""
+"StateMachine": ""
 }
 
 [application]

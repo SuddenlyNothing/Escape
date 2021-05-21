@@ -7,9 +7,6 @@
 [node name="RotatingCamera" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="StaticCamera" parent="." index="2"]
-visible = false
-
 [node name="Tween" type="Tween" parent="." index="3"]
 repeat = true
 playback/repeat = true
@@ -18,3 +15,6 @@ playback/repeat = true
 z_index = 1025
 texture = ExtResource( 3 )
 offset = Vector2( 0, -5 )
+
+[node name="StaticCamera" parent="CameraFlip" index="0"]
+visible = false

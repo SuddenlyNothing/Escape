@@ -6,9 +6,8 @@
 
 [node name="CameraSpinning" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-rot_speed = 200
 
-[node name="StaticCamera" parent="." index="2"]
+[node name="StaticCamera" parent="CameraFlip" index="0"]
 visible = false
 
 [node name="CameraSpinning" type="Sprite" parent="." index="4"]
