@@ -27,14 +27,9 @@ speed = 5000
 
 [node name="Conveyor" parent="." instance=ExtResource( 5 )]
 position = Vector2( 160, -128 )
-constant_linear_velocity = Vector2( -250, 0 )
-conveyor_speed = 250
-facing_right = false
 
 [node name="Conveyor2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 288, -128 )
-constant_linear_velocity = Vector2( -250, 0 )
-conveyor_speed = 250
 
 [node name="Spike" parent="." instance=ExtResource( 4 )]
 position = Vector2( 208, -32 )

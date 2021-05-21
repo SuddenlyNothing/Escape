@@ -48,11 +48,12 @@ extents = Vector2( 64, 4 )
 constant_linear_velocity = Vector2( -100, 0 )
 script = ExtResource( 2 )
 conveyor_speed = 100
+facing_right = false
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="ConveyorBelt" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 4 )
 frames = SubResource( 7 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

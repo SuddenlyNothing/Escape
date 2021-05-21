@@ -12,3 +12,4 @@ func _process(_delta):
 		else:
 			scale.x = 1
 			constant_linear_velocity = Vector2.LEFT*conveyor_speed
+		
