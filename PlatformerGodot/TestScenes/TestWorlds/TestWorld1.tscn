@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Worlds/WorldBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TestScenes/TestWorlds/TestWorld1.gd" type="Script" id=2]
+[ext_resource path="res://Objects/PortalEnterLevel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/PlatformMoveStay.tscn" type="PackedScene" id=4]
+
+[node name="TestWorld1" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+world_num = 1
+
+[node name="TileMap" parent="." index="1"]
+tile_data = PoolIntArray( -65536, 6, 0, -65535, 6, 0, -65534, 6, 0, -65533, 6, 0, -65522, 6, 0, -65521, 6, 0, -65520, 6, 0, -65519, 6, 0, -65518, 6, 0, 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 14, 5, 0, 15, 5, 0, 16, 5, 0, 17, 5, 0, 18, 5, 0, 65536, 5, 0, 65537, 5, 0, 65538, 5, 0, 65539, 5, 0, 65550, 5, 0, 65551, 5, 0, 65552, 5, 0, 65553, 5, 0, 65554, 5, 0 )
+
+[node name="Player" parent="." index="2"]
+position = Vector2( 24, -48 )
+
+[node name="PortalEnterLevel" parent="." index="3"]
+position = Vector2( 80, -112 )
+next_scene = "res://TestScenes/TestWorlds/TestLevels1/W1L1.tscn"
+scene_level = 1
+
+[node name="PortalEnterLevel2" parent="." index="4" instance=ExtResource( 3 )]
+position = Vector2( 592, -112 )
+next_scene = "res://TestScenes/TestWorlds/TestLevels1/W1L2.tscn"
+scene_level = 2
+
+[node name="Lvl1" type="Node2D" parent="." index="5"]
+
+[node name="PlatformMoveStay2" parent="Lvl1" index="0" instance=ExtResource( 4 )]
+position = Vector2( 64, 56 )
+points = PoolVector2Array( 0, 4, 96, -84 )
+
+[node name="PlatformMoveStay" parent="Lvl1" index="1" instance=ExtResource( 4 )]
+position = Vector2( 288, 216 )
+points = PoolVector2Array( 0, 4, 0, -244 )
+
+[node name="PlatformMoveStay3" parent="Lvl1" index="2" instance=ExtResource( 4 )]
+position = Vector2( 512, 56 )
+points = PoolVector2Array( 0, 4, -96, -84 )
+
+[node name="Lvl2" type="Node2D" parent="." index="6"]
+
+[node name="PlatformMoveStay2" parent="Lvl2" index="0" instance=ExtResource( 4 )]
+position = Vector2( 578, 54 )
+points = PoolVector2Array( 0, 4, 96, -84 )
+
+[node name="PlatformMoveStay" parent="Lvl2" index="1" instance=ExtResource( 4 )]
+position = Vector2( 802, 214 )
+points = PoolVector2Array( 0, 4, 0, -244 )
+
+[node name="PlatformMoveStay3" parent="Lvl2" index="2" instance=ExtResource( 4 )]
+position = Vector2( 1026, 54 )
+points = PoolVector2Array( 0, 4, -96, -84 )

@@ -38,7 +38,7 @@ func load_dialog():
 		marker.visible = false
 		label.bbcode_text = dialog[dialog_index]
 		label.percent_visible = 0
-		tween.interpolate_property(label, "percent_visible", 0, 1, len(dialog[dialog_index])/25)
+		tween.interpolate_property(label, "percent_visible", 0, 1, len(dialog[dialog_index])/25.0)
 		tween.start()
 		print("tween started")
 	else:
