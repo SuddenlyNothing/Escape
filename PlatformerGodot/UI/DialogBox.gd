@@ -1,9 +1,9 @@
 extends Control
 
-onready var label = $Control/RichTextLabel
-onready var tween = $Control/Tween
+onready var label = $Control/Label
+onready var tween = $Tween
 onready var next_sfx = $NextDialog
-onready var marker = $Marker
+onready var marker = $Control/Marker
 
 export(PoolStringArray) var dialog = ["YOU FORGOT TO SET THE DIALOG STRING!!!"]
 
@@ -11,11 +11,12 @@ var dialog_index = 0
 var finished = false
 var started = false
 
-signal dialogue_finished
+signal dialog_finished
 
 func start():
+	next_sfx.play()
 	started = true
-	visible = true
+	show()
 	load_dialog()
 
 func _process(delta):
@@ -39,10 +40,11 @@ func load_dialog():
 		label.percent_visible = 0
 		tween.interpolate_property(label, "percent_visible", 0, 1, len(dialog[dialog_index])/25)
 		tween.start()
+		print("tween started")
 	else:
 		next_sfx.play()
 		yield(next_sfx, "finished")
-		emit_signal("dialogue_finished")
+		emit_signal("dialog_finished")
 		queue_free()
 	dialog_index += 1
 
