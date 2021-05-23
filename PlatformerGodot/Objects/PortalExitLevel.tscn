@@ -37,9 +37,8 @@ script = ExtResource( 3 )
 
 [node name="Portal" parent="." index="0"]
 visible = false
-frame = 2
+frame = 1
 
 [node name="PortalExit" type="AnimatedSprite" parent="." index="2"]
 frames = SubResource( 5 )
-frame = 1
 playing = true

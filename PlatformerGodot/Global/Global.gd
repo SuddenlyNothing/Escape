@@ -3,6 +3,8 @@ extends Node
 onready var fade_in := $CanvasLayer/FadeIn
 onready var fade_out := $CanvasLayer/FadeOut
 
+onready var options_menu := $CanvasLayer/Options
+
 var current_scene = null
 
 var player = null
@@ -13,25 +15,26 @@ var current_level = {
 }
 
 var furthest_incomplete_level = {
-	"world":-1,
-	"level":-1
+	"world":1,
+	"level":1
 }
 
 var path := "user://data.json"
 
 var default_data = {
-	"options": {
-		"sfx_volume": 1,
-		"master_volume": 1,
+	"volume": {
+		"Master": 1,
+		"SFX": 1,
+		"Music": 1,
 	},
 	"level_data": {
 		1: {
 			1:false,
-			2:false
+			2:false,
 		},
 		2: {
 			1:false,
-			2:false
+			2:false,
 		}
 	},
 }
@@ -39,7 +42,6 @@ var default_data = {
 var data = {}
 
 func _ready():
-	print("hello")
 	load_json()
 	OS.window_maximized = true
 	get_current_scene()
@@ -58,8 +60,9 @@ func load_json():
 	
 	data = parse_json(text)
 	
-	print(data)
 	set_furthest_incomplete_level()
+	for audio_bus_name in data.volume:
+		set_volume(audio_bus_name, data.volume[audio_bus_name])
 	
 	file.close()
 
@@ -81,10 +84,11 @@ func finish_current_level():
 
 func set_furthest_incomplete_level():
 	for world in data.level_data:
-		for level in data.level_data.world:
-			if data.level_data.world.level == false:
-				furthest_incomplete_level.world = world
-				furthest_incomplete_level.level = level
+		for level in data.level_data[world]:
+			if data.level_data[world][level] == false:
+				furthest_incomplete_level.world = int(world)
+				furthest_incomplete_level.level = int(level)
+				return
 
 func get_current_scene():
 	var root = get_tree().get_root()
@@ -118,7 +122,20 @@ func _deferred_goto_scene(path):
 	# fade in transition
 	fade_in.fade_in()
 	fade_out.fade_out_hide()
+	yield(fade_in, "faded_in")
 	get_tree().paused = false
 
 func restart(transition_texture = null, message = ""):
 	goto_scene(current_scene.filename, transition_texture, message)
+
+func options_menu_enter():
+	options_menu.enter()
+
+func options_menu_exit():
+	options_menu.exit()
+
+func set_volume(audio_bus_name, value):
+	var bus := AudioServer.get_bus_index(audio_bus_name)
+	AudioServer.set_bus_volume_db(bus, linear2db(value))
+	data.volume[audio_bus_name] = value
+	save_json()

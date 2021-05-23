@@ -1,0 +1,134 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://UI/Options.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/OptionsMenuTitle.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Fonts/OptionsMenu.tres" type="DynamicFont" id=3]
+[ext_resource path="res://UI/VolumeSlider.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Fonts/Glassibox.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[node name="Options" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.588235 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 10
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 81.0
+margin_right = 1024.0
+margin_bottom = 181.0
+rect_min_size = Vector2( 0, 100 )
+custom_fonts/font = ExtResource( 2 )
+text = "Menu"
+align = 1
+
+[node name="MasterVolume" type="Label" parent="VBoxContainer"]
+margin_top = 191.0
+margin_right = 1024.0
+margin_bottom = 241.0
+rect_min_size = Vector2( 0, 50 )
+custom_fonts/font = ExtResource( 3 )
+text = "Master"
+align = 1
+valign = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 251.0
+margin_right = 1024.0
+margin_bottom = 267.0
+
+[node name="VolumeSlider" parent="VBoxContainer/CenterContainer" instance=ExtResource( 4 )]
+margin_left = 262.0
+margin_right = 762.0
+mouse_filter = 1
+
+[node name="MusicVolume" type="Label" parent="VBoxContainer"]
+margin_top = 277.0
+margin_right = 1024.0
+margin_bottom = 327.0
+rect_min_size = Vector2( 0, 50 )
+custom_fonts/font = ExtResource( 3 )
+text = "Music"
+align = 1
+valign = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 337.0
+margin_right = 1024.0
+margin_bottom = 353.0
+
+[node name="VolumeSlider" parent="VBoxContainer/CenterContainer2" instance=ExtResource( 4 )]
+margin_left = 262.0
+margin_right = 762.0
+mouse_filter = 1
+audio_bus_name = "Music"
+
+[node name="SFXVolume" type="Label" parent="VBoxContainer"]
+margin_top = 363.0
+margin_right = 1024.0
+margin_bottom = 413.0
+rect_min_size = Vector2( 0, 50 )
+custom_fonts/font = ExtResource( 3 )
+text = "Sfx"
+align = 1
+valign = 2
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 423.0
+margin_right = 1024.0
+margin_bottom = 439.0
+
+[node name="VolumeSlider" parent="VBoxContainer/CenterContainer3" instance=ExtResource( 4 )]
+margin_left = 262.0
+margin_right = 762.0
+mouse_filter = 1
+audio_bus_name = "SFX"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 449.0
+margin_right = 1024.0
+margin_bottom = 519.0
+rect_min_size = Vector2( 0, 70 )
+mouse_filter = 0
+alignment = 1
+
+[node name="Back" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 457.0
+margin_right = 566.0
+margin_bottom = 70.0
+focus_mode = 0
+mouse_filter = 1
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.537255, 0.537255, 0.537255, 1 )
+text = "Back"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Back" to="." method="_on_Back_pressed"]
