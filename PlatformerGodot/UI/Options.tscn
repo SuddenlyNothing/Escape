@@ -21,6 +21,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 worlds_scene = "res://Worlds/WorldSelect.tscn"
+menu = "res://UI/MainMenu.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -121,8 +122,8 @@ custom_constants/separation = 50
 alignment = 1
 
 [node name="Back" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 252.0
-margin_right = 361.0
+margin_left = 173.0
+margin_right = 282.0
 margin_bottom = 70.0
 focus_mode = 0
 mouse_filter = 1
@@ -133,9 +134,22 @@ custom_colors/font_color_pressed = Color( 0.537255, 0.537255, 0.537255, 1 )
 text = "Back"
 flat = true
 
+[node name="Menu" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 332.0
+margin_right = 441.0
+margin_bottom = 70.0
+focus_mode = 0
+mouse_filter = 1
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.537255, 0.537255, 0.537255, 1 )
+text = "Menu"
+flat = true
+
 [node name="Worlds" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 411.0
-margin_right = 566.0
+margin_left = 491.0
+margin_right = 646.0
 margin_bottom = 70.0
 focus_mode = 0
 mouse_filter = 1
@@ -147,8 +161,8 @@ text = "Worlds"
 flat = true
 
 [node name="Levels" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 616.0
-margin_right = 771.0
+margin_left = 696.0
+margin_right = 851.0
 margin_bottom = 70.0
 focus_mode = 0
 mouse_filter = 1
@@ -160,5 +174,6 @@ text = "Levels"
 flat = true
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Menu" to="." method="_on_Menu_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Worlds" to="." method="_on_Worlds_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Levels" to="." method="_on_Levels_pressed"]

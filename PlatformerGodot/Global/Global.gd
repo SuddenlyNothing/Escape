@@ -53,7 +53,6 @@ var default_data = {
 			3:false,
 		},
 	},
-	"did_intro_cutscene":false,
 }
 
 var data = {}
