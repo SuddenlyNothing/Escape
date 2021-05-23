@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Terrain/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Background/Background.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Cutscenes/IntroCutscene.gd" type="Script" id=6]
 [ext_resource path="res://Characters/Enemies/ForkliftBase.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/DialogBox.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Fonts/Glassibox.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "PlayerEscape"
@@ -102,6 +103,12 @@ tracks/3/keys = {
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 8, 8 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 9 )
 
 [node name="IntroCutscene" type="Node2D"]
 script = ExtResource( 6 )
@@ -237,5 +244,22 @@ dialog = PoolStringArray( "Where did it go\?", "I don\'t know. It could be anywh
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Skip" type="Button" parent="."]
+margin_left = 400.0
+margin_top = 376.0
+margin_right = 509.0
+margin_bottom = 446.0
+mouse_filter = 1
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.537255, 0.537255, 0.537255, 1 )
+text = "Skip"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="Skip" to="." method="_on_Skip_pressed"]

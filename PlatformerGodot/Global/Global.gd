@@ -7,6 +7,7 @@ onready var options_menu := $CanvasLayer/Options
 
 var previous_scene = null
 var current_scene = null
+var did_intro_cutscene = false
 
 var player = null
 
@@ -45,6 +46,7 @@ var default_data = {
 			2:false,
 		}
 	},
+	"did_intro_cutscene":false,
 }
 
 var data = {}
@@ -68,6 +70,7 @@ func load_json():
 	
 	data = parse_json(text)
 	
+	did_intro_cutscene = data.did_intro_cutscene
 	set_furthest_incomplete_level()
 	for audio_bus_name in data.volume:
 		set_volume(audio_bus_name, data.volume[audio_bus_name])
@@ -161,4 +164,9 @@ func set_volume(audio_bus_name, value):
 	var bus := AudioServer.get_bus_index(audio_bus_name)
 	AudioServer.set_bus_volume_db(bus, linear2db(value))
 	data.volume[audio_bus_name] = value
+	save_json()
+
+func complete_intro_cutscene():
+	did_intro_cutscene = true
+	data.did_intro_cutscene = true
 	save_json()

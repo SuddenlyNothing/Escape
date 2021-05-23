@@ -43,7 +43,7 @@ func sprite_play(val):
 	goon1_sprite.playing = val
 	goon2_sprite.playing = val
 
-func _on_Area2D_body_entered(body):
+func _on_Area2D_body_entered(_body):
 	if forklift_start_moving:
 		forklift_start_moving = false
 		sprite_play(false)
@@ -65,4 +65,9 @@ func _on_Area2D_body_entered(body):
 func _on_Timer_timeout():
 	anim_player.play("PlayerEscape")
 	yield(anim_player, "animation_finished")
+	Global.complete_intro_cutscene()
+	Global.goto_scene(nxt_scene)
+
+func _on_Skip_pressed():
+	Global.complete_intro_cutscene()
 	Global.goto_scene(nxt_scene)
