@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal grounded_updated(is_grounded)
+
 onready var sprite := $DirectionDependents/Sprite
 onready var state_label := $StateLabel
 onready var direction_dependents := $DirectionDependents

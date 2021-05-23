@@ -66,17 +66,25 @@ func _get_transition(delta):
 func _enter_state(new_state, old_state):
 	match state:
 		states.idle:
+			if previous_state == states.jump or previous_state == states.fall:
+				parent.emit_signal("grounded_updated", true)
 			parent.set_idle_body()
 			parent.play_anim("idle")
 		states.jump:
+			if previous_state == states.idle or previous_state == states.run:
+				parent.emit_signal("grounded_updated", false)
 			parent.play_anim("jump")
 			parent.jump()
 		states.fall:
+			if previous_state == states.idle or previous_state == states.run:
+				parent.emit_signal("grounded_updated", false)
 			if parent.y_vel < 0:
 				parent.y_vel = 0
 			parent.play_anim("fall")
 			parent.coyote_timer.start()
 		states.run:
+			if previous_state == states.jump or previous_state == states.fall:
+				parent.emit_signal("grounded_updated", true)
 			parent.play_anim("run")
 
 func _exit_state(old_state, new_state):
@@ -89,8 +97,6 @@ func _exit_state(old_state, new_state):
 			parent.coyote_timer.stop()
 		states.run:
 			pass
-
-
 
 
 
