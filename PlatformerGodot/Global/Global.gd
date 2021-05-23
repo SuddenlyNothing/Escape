@@ -5,9 +5,17 @@ onready var fade_out := $CanvasLayer/FadeOut
 
 onready var options_menu := $CanvasLayer/Options
 
+var previous_scene = null
 var current_scene = null
 
 var player = null
+
+var world_checkpoint = {
+	"world":null,
+	"player_pos":null,
+}
+
+var level_checkpoint = null
 
 var current_level = {
 	"world":-1,
@@ -80,6 +88,10 @@ func save_json():
 func finish_current_level():
 	data["level_data"][current_level.world][current_level.level] = true
 	set_furthest_incomplete_level()
+	current_level = {
+		"world":-1,
+		"level":-1
+	}
 	save_json()
 
 func set_furthest_incomplete_level():
@@ -94,18 +106,22 @@ func get_current_scene():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
 
-func goto_scene(path, transition_texture = null, message = ""):
+func goto_scene(path):
+	reset_level_vars()
 	get_tree().paused = true
-	fade_out.fade_out(transition_texture, message)
+	fade_out.fade_out()
 	yield(fade_out, "faded_out")
 	call_deferred("_deferred_goto_scene", path)
 
-func reset_vars():
+func reset_scene_vars():
 	player = null
 
+func reset_level_vars():
+	level_checkpoint = null
+
 func _deferred_goto_scene(path):
-	# reset variables
-	reset_vars()
+	# reset variables that differ from each scene
+	reset_scene_vars()
 	
 	# It is now safe to remove the current scene
 	current_scene.free()
@@ -113,7 +129,8 @@ func _deferred_goto_scene(path):
 	# Load the new scene.
 	var s = ResourceLoader.load(path)
 
-	# Instance the new scene.
+	# Instance the new scene. Set previous_scene as current_scene
+	previous_scene = current_scene
 	current_scene = s.instance()
 
 	# Add it to the active scene, as child of root.
@@ -126,7 +143,13 @@ func _deferred_goto_scene(path):
 	get_tree().paused = false
 
 func restart(transition_texture = null, message = ""):
-	goto_scene(current_scene.filename, transition_texture, message)
+	get_tree().paused = true
+	fade_out.fade_out(transition_texture, message)
+	yield(fade_out, "faded_out")
+	call_deferred("_deferred_goto_scene", current_scene.filename)
+
+func goto_previous_scene():
+	goto_scene(previous_scene.filename)
 
 func options_menu_enter():
 	options_menu.enter()

@@ -116,11 +116,12 @@ margin_right = 1024.0
 margin_bottom = 519.0
 rect_min_size = Vector2( 0, 70 )
 mouse_filter = 0
+custom_constants/separation = 50
 alignment = 1
 
 [node name="Back" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 457.0
-margin_right = 566.0
+margin_left = 252.0
+margin_right = 361.0
 margin_bottom = 70.0
 focus_mode = 0
 mouse_filter = 1
@@ -131,4 +132,30 @@ custom_colors/font_color_pressed = Color( 0.537255, 0.537255, 0.537255, 1 )
 text = "Back"
 flat = true
 
+[node name="Worlds" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 411.0
+margin_right = 566.0
+margin_bottom = 70.0
+mouse_filter = 1
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.537255, 0.537255, 0.537255, 1 )
+text = "Worlds"
+flat = true
+
+[node name="Levels" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 616.0
+margin_right = 771.0
+margin_bottom = 70.0
+mouse_filter = 1
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.537255, 0.537255, 0.537255, 1 )
+text = "Levels"
+flat = true
+
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Worlds" to="." method="_on_Worlds_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Levels" to="." method="_on_Levels_pressed"]
