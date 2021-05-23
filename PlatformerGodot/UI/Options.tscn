@@ -20,6 +20,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+worlds_scene = "res://Worlds/WorldSelect.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -136,6 +137,7 @@ flat = true
 margin_left = 411.0
 margin_right = 566.0
 margin_bottom = 70.0
+focus_mode = 0
 mouse_filter = 1
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
@@ -148,6 +150,7 @@ flat = true
 margin_left = 616.0
 margin_right = 771.0
 margin_bottom = 70.0
+focus_mode = 0
 mouse_filter = 1
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )

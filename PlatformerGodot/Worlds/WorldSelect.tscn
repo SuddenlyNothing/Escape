@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Fonts/Title.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Fonts/Buttons.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Worlds/WorldSelect.gd" type="Script" id=3]
+
+[node name="WorldSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+world1_scene = "res://Worlds/World1/World1.tscn"
+world2_scene = "res://Worlds/World2/World2.tscn"
+world3_scene = "res://Worlds/World3/World3.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.282353, 0, 0.25098, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 50
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 223.0
+margin_right = 1024.0
+margin_bottom = 283.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.45098, 0, 0.447059, 1 )
+text = "Worlds"
+align = 1
+
+[node name="Worlds" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 333.0
+margin_right = 1024.0
+margin_bottom = 377.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="World1" type="Button" parent="VBoxContainer/Worlds"]
+margin_left = 222.0
+margin_right = 382.0
+margin_bottom = 44.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.45098, 0, 0.447059, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.392157, 0.392157, 1 )
+enabled_focus_mode = 0
+text = "World 1"
+flat = true
+
+[node name="World2" type="Button" parent="VBoxContainer/Worlds"]
+margin_left = 432.0
+margin_right = 592.0
+margin_bottom = 44.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.45098, 0, 0.447059, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.392157, 0.392157, 1 )
+enabled_focus_mode = 0
+text = "World 2"
+flat = true
+
+[node name="World3" type="Button" parent="VBoxContainer/Worlds"]
+margin_left = 642.0
+margin_right = 802.0
+margin_bottom = 44.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.45098, 0, 0.447059, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.392157, 0.392157, 1 )
+enabled_focus_mode = 0
+text = "World 3"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/Worlds/World1" to="." method="_on_World1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Worlds/World2" to="." method="_on_World2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Worlds/World3" to="." method="_on_World3_pressed"]

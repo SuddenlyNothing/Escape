@@ -35,10 +35,10 @@ animations = [ {
 [node name="PortalEnterLevel" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="Portal" parent="." index="0"]
-visible = false
-frame = 1
-
-[node name="PortalEnter" type="AnimatedSprite" parent="." index="2"]
+[node name="PortalEnter" type="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 5 )
+frame = 3
 playing = true
+
+[node name="Portal" parent="." index="1"]
+visible = false

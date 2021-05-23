@@ -11,7 +11,8 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-play = "res://GameScenes/Tutorial1Platforms.tscn"
+intro_cutscene = "res://Cutscenes/IntroCutscene.tscn"
+play = "res://Worlds/WorldSelect.tscn"
 credits = "res://UI/Credits.tscn"
 tutorial = "res://GameScenes/Tutorial1Platforms.tscn"
 

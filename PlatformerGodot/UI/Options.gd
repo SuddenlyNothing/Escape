@@ -30,7 +30,7 @@ func _process(_delta):
 	else:
 		levels_button.hide()
 	
-	if Global.current_level.world > 1:
+	if Global.furthest_incomplete_level.world > 1:
 		worlds_button.show()
 	else:
 		worlds_button.hide()

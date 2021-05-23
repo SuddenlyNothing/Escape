@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Worlds/WorldBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/PortalEnterLevel.tscn" type="PackedScene" id=2]
+
+[node name="World2" instance=ExtResource( 1 )]
+world_num = 2
+
+[node name="TileMap" parent="." index="1"]
+tile_data = PoolIntArray( -393218, 6, 0, -393217, 6, 0, -458741, 6, 0, -458740, 6, 0, -327682, 5, 0, -327681, 5, 0, -393205, 5, 0, -393204, 5, 0, -262146, 5, 0, -262145, 5, 0, -327669, 5, 0, -327668, 5, 0, -196610, 5, 0, -196609, 5, 0, -262133, 5, 0, -262132, 5, 0, -131074, 5, 0, -131073, 5, 0, -196597, 5, 0, -196596, 5, 0, -65538, 5, 0, -65537, 5, 0, -131072, 6, 0, -131071, 6, 0, -131070, 6, 0, -131069, 6, 0, -131068, 6, 0, -131066, 6, 0, -131064, 6, 0, -131062, 6, 0, -131061, 5, 0, -131060, 5, 0, -2, 5, 0, -1, 5, 0, -65536, 5, 0, -65535, 5, 0, -65534, 5, 0, -65533, 5, 0, -65532, 5, 0, -65530, 5, 0, -65528, 5, 0, -65526, 5, 0, -65525, 5, 0, -65524, 5, 0, 65534, 5, 0, 65535, 5, 0, 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 5, 0, 5, 5, 0, 6, 5, 0, 7, 5, 0, 8, 5, 0, 9, 5, 0, 10, 5, 0, 11, 5, 0, 12, 5, 0 )
+
+[node name="PortalEnterLevel" parent="." index="3"]
+position = Vector2( 176, -16 )
+next_scene = "res://Worlds/World2/Levels2/L1.tscn"
+
+[node name="PortalEnterLevel2" parent="." index="4" instance=ExtResource( 2 )]
+position = Vector2( 240, -16 )
+next_scene = "res://Worlds/World2/Levels2/L2.tscn"
+scene_level = 2
+
+[node name="PortalEnterLevel3" parent="." index="5" instance=ExtResource( 2 )]
+position = Vector2( 304, -16 )
+next_scene = "res://Worlds/World2/Levels2/L3.tscn"
+scene_level = 3
