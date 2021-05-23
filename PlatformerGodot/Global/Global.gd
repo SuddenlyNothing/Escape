@@ -52,10 +52,13 @@ var default_data = {
 var data = {}
 
 func _ready():
+	get_tree().paused = true
 	load_json()
 	OS.window_maximized = true
 	get_current_scene()
 	fade_in.fade_in()
+	yield(fade_in, "faded_in")
+	get_tree().paused = false
 
 func load_json():
 	var file = File.new()
