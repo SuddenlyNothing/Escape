@@ -16,7 +16,6 @@ offset = Vector2( 1500, 0 )
 color = Color( 1, 0, 0, 1 )
 range_layer_min = -512
 shadow_enabled = true
-shadow_color = Color( 1, 1, 1, 0 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 

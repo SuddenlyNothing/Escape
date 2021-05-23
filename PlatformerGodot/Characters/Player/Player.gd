@@ -24,6 +24,8 @@ export(float) var max_fall_speed := 1000.0
 export(String, FILE, "*.png") var death_fall_transition
 export(String) var death_fall_message := "You Fell"
 
+var last_floor_contact_pos := position
+
 var x_vel := 0.0
 var facing_right := true
 

@@ -1,6 +1,8 @@
 extends Node2D
 class_name WorldBase
 
+onready var player := $Player
+
 # used to determine current level
 export(int) var world_num
 
@@ -11,6 +13,8 @@ func _ready():
 		load_all_levels()
 	elif fil.world == world_num:
 		load_level(fil.level-1)
+	if Global.world_checkpoint.world == world_num:
+		player.position = Global.world_checkpoint.player_pos
 
 func load_level(lvl):
 	pass
