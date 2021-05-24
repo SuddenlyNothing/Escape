@@ -40,20 +40,20 @@ var default_data = {
 		"Music": 1,
 	},
 	"level_data": {
-		1: {
-			1:false,
-			2:false,
-			3:false,
+		"1": {
+			"1":false,
+			"2":false,
+			"3":false,
 		},
-		2: {
-			1:false,
-			2:false,
-			3:false,
+		"2": {
+			"1":false,
+			"2":false,
+			"3":false,
 		},
-		3: {
-			1:false,
-			2:false,
-			3:false,
+		"3": {
+			"1":false,
+			"2":false,
+			"3":false,
 		},
 	},
 }
@@ -115,6 +115,9 @@ func set_furthest_incomplete_level():
 				furthest_incomplete_level.world = int(world)
 				furthest_incomplete_level.level = int(level)
 				return
+	# *sigh* ...it's over 9 thousand...
+	furthest_incomplete_level.world = 9001
+	furthest_incomplete_level.level = 9001
 
 func get_current_scene():
 	var root = get_tree().get_root()
@@ -156,7 +159,6 @@ func _deferred_goto_scene(path):
 	# fade in transition
 	fade_in.fade_in()
 	fade_out.fade_out_hide()
-	yield(fade_in, "faded_in")
 	get_tree().paused = false
 
 func restart(transition_texture = null, message = ""):

@@ -6,7 +6,7 @@ onready var raycast := $RayCast2D
 onready var rotation_dependents := $RotationDependents
 onready var camera_flip := $CameraFlip
 
-export(int, -360, 360) var rot_deg := 45
+export(int, 0, 360) var rot_deg := 45
 export(String, FILE, "*.png") var death_transition := "res://Assets/DeathTransitions/Caught.png"
 export(String) var death_message := "You Were Caught"
 
@@ -29,12 +29,20 @@ func set_rot_deg():
 			$CameraFlip.scale.x = -1
 		else:
 			$CameraFlip.scale.x = 1
+		if rot_deg > 180:
+			$CameraFlip.scale.y = -1
+		else:
+			$CameraFlip.scale.y = 1
 	else:
 		rotation_dependents.rotation_degrees = rot_deg
 		if rot_deg > 90 and rot_deg < 270:
 			camera_flip.scale.x = -1
 		else:
 			camera_flip.scale.x = 1
+		if rot_deg > 180:
+			camera_flip.scale.y = -1
+		else:
+			camera_flip.scale.y = 1
 
 func is_player_in_vision():
 	if player == null:

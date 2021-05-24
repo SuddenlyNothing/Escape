@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Fonts/Glassibox.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Fonts/Buttons.tres" type="DynamicFont" id=3]
@@ -7,6 +7,12 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
+outline_size = 1
+outline_color = Color( 0.988235, 0, 1, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
 outline_size = 1
 outline_color = Color( 0.988235, 0, 1, 1 )
 font_data = ExtResource( 1 )
@@ -38,9 +44,9 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
-margin_top = 168.0
+margin_top = 111.0
 margin_right = 1024.0
-margin_bottom = 228.0
+margin_bottom = 171.0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.45098, 0, 0.447059, 1 )
 custom_colors/font_outline_modulate = Color( 0.988235, 0, 1, 1 )
@@ -52,9 +58,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_top = 278.0
+margin_top = 221.0
 margin_right = 1024.0
-margin_bottom = 338.0
+margin_bottom = 281.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.45098, 0, 0.447059, 1 )
 custom_colors/font_outline_modulate = Color( 0.988235, 0, 1, 1 )
@@ -65,10 +71,25 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
-margin_top = 388.0
+[node name="Label3" type="Label" parent="VBoxContainer"]
+margin_top = 331.0
 margin_right = 1024.0
-margin_bottom = 432.0
+margin_bottom = 394.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.45098, 0, 0.447059, 1 )
+custom_colors/font_outline_modulate = Color( 0.988235, 0, 1, 1 )
+text = "Music: Ben Engeldinger
+Font: Adam Little"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 444.0
+margin_right = 1024.0
+margin_bottom = 488.0
 
 [node name="Menu" type="Button" parent="VBoxContainer/CenterContainer"]
 margin_left = 457.0

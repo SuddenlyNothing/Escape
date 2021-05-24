@@ -35,9 +35,9 @@ func tween_two_way():
 	var end_point := get_point_position(1)
 	var duration = platform.position.distance_to(end_point)/speed
 	t.interpolate_property(platform, "position", start_point+platform_offset, end_point+platform_offset, duration,
-		Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT, idle_seconds)
 	t.interpolate_property(platform, "position", end_point+platform_offset, start_point+platform_offset, duration,
-		Tween.TRANS_SINE, Tween.EASE_IN_OUT, duration+idle_seconds)
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT, duration+idle_seconds*2)
 
 func tween_one_way():
 	var start_point := get_point_position(0)

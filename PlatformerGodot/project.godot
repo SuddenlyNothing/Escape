@@ -74,6 +74,10 @@ Global="*res://Global/Global.tscn"
 
 window/stretch/mode="2d"
 
+[global]
+
+2d=false
+
 [input]
 
 move_left={
