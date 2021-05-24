@@ -14,6 +14,10 @@ func _ready():
 func load_worlds(world):
 	if world < 1:
 		return
+	if world == 9001:
+		for child in worlds.get_children():
+			child.show()
+		return
 	worlds.get_child(world-1).show()
 	load_worlds(world-1)
 
