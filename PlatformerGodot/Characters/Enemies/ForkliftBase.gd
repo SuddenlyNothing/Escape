@@ -12,7 +12,7 @@ onready var flip := $Flip
 
 var x_dir := -1.0
 var y_vel := 0
-var snap_default := Vector2.DOWN * 32.0
+var snap_default := Vector2.DOWN * 31.0
 var gravity := 25.0
 var max_fall_speed := 1000.0
 

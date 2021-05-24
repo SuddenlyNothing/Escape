@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/Objects/Spikes.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Spike.gd" type="Script" id=2]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 15, 1 )
 
 [node name="Spike" type="Node2D"]
 script = ExtResource( 2 )
@@ -18,11 +15,5 @@ offset = Vector2( 0, -8 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PoolVector2Array( -16, -2, -9, -16, -7, -16, 0, -2, 7, -16, 9, -16, 16, -2, 16, 0, -16, 0 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 0, -1 )
-shape = SubResource( 1 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

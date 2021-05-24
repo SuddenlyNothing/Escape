@@ -65,14 +65,14 @@ position = Vector2( 6848, -576 )
 points = PoolVector2Array( 0, 4, 424, 4 )
 speed = 200
 
-[node name="PlatformMoveRepeat9" parent="." index="16" instance=ExtResource( 3 )]
-position = Vector2( 7696, -456 )
-points = PoolVector2Array( 0, 4, -424, 4 )
+[node name="PlatformMoveRepeat10" parent="." index="16" instance=ExtResource( 3 )]
+position = Vector2( 7696, -320 )
+points = PoolVector2Array( 0, 4, 424, 4 )
 speed = 200
 
-[node name="PlatformMoveRepeat10" parent="." index="17" instance=ExtResource( 3 )]
-position = Vector2( 7696, -320 )
-points = PoolVector2Array( 0, 4, 432, 4 )
+[node name="PlatformMoveRepeat9" parent="." index="17" instance=ExtResource( 3 )]
+position = Vector2( 7696, -456 )
+points = PoolVector2Array( 0, 4, -424, 4 )
 speed = 200
 
 [node name="PlatformMoveRepeat11" parent="." index="18" instance=ExtResource( 3 )]
