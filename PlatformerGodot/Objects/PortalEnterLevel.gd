@@ -9,3 +9,4 @@ func goto_next_scene():
 	Global.current_level.world = owner.world_num
 	Global.current_level.level = scene_level
 	Global.goto_scene(next_scene)
+	Global.start_level_music()

@@ -1,7 +1,7 @@
 extends Control
 
-onready var levels_button := $VBoxContainer/HBoxContainer/Levels
-onready var worlds_button := $VBoxContainer/HBoxContainer/Worlds
+onready var levels_button := $VBoxContainer/HBoxContainer2/Levels
+onready var worlds_button := $VBoxContainer/HBoxContainer2/Worlds
 onready var menu_button := $VBoxContainer/HBoxContainer/Menu
 
 export(String, FILE, "*.tscn") var worlds_scene
@@ -32,7 +32,7 @@ func _process(_delta):
 	else:
 		levels_button.hide()
 	
-	if Global.furthest_incomplete_level.world > 1:
+	if Global.current_scene != null and Global.furthest_incomplete_level.world > 1 and Global.current_scene.filename != worlds_scene:
 		worlds_button.show()
 	else:
 		worlds_button.hide()

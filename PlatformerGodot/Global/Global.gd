@@ -5,6 +5,9 @@ onready var fade_out := $CanvasLayer/FadeOut
 
 onready var options_menu := $CanvasLayer/Options
 
+onready var menu_music := $MenuMusic
+onready var level_music := $LevelMusic
+
 var previous_scene = null
 var current_scene = null
 var did_intro_cutscene = false
@@ -79,7 +82,6 @@ func load_json():
 	
 	data = parse_json(text)
 	
-	did_intro_cutscene = data.did_intro_cutscene
 	set_furthest_incomplete_level()
 	for audio_bus_name in data.volume:
 		set_volume(audio_bus_name, data.volume[audio_bus_name])
@@ -119,6 +121,7 @@ func get_current_scene():
 	current_scene = root.get_child(root.get_child_count() - 1)
 
 func goto_scene(path):
+	stop_level_music()
 	options_menu.exit()
 	reset_level_vars()
 	get_tree().paused = true
@@ -182,3 +185,12 @@ func complete_intro_cutscene():
 	did_intro_cutscene = true
 	data.did_intro_cutscene = true
 	save_json()
+
+func start_level_music():
+	level_music.play()
+	menu_music.stop()
+
+func stop_level_music():
+	level_music.stop()
+	if !menu_music.is_playing():
+		menu_music.play()

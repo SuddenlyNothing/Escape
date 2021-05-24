@@ -19,6 +19,7 @@ onready var timer := $Timer
 var forklift_start_moving = false
 
 func _ready():
+	Global.start_level_music()
 	anim_player.play("PlayerHide")
 	yield(anim_player, "animation_finished")
 	flip()
