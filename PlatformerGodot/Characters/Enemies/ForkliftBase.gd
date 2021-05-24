@@ -5,6 +5,8 @@ export(float) var speed := 100.0
 export(String, FILE, "*.png") var death_transition
 export(String) var death_message := "You Were Caught"
 
+export(bool) var unload_until_offscreen := true
+
 onready var v_n := $VisibilityNotifier2D
 onready var flip := $Flip
 
@@ -15,7 +17,8 @@ var gravity := 25.0
 var max_fall_speed := 1000.0
 
 func _ready():
-	v_n.set_parent(self)
+	if unload_until_offscreen:
+		v_n.set_parent(self)
 
 func flip():
 	x_dir *= -1

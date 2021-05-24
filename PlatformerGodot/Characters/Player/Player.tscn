@@ -9,6 +9,7 @@
 extents = Vector2( 8, 12.5 )
 
 [node name="Player" type="KinematicBody2D"]
+z_index = 50
 script = ExtResource( 1 )
 death_fall_transition = "res://Assets/DeathTransitions/Fall.png"
 

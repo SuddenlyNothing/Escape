@@ -6,32 +6,32 @@
 [sub_resource type="AtlasTexture" id=1]
 flags = 1
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 128, 8 )
+region = Rect2( 0, 0, 256, 16 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 1
 atlas = ExtResource( 1 )
-region = Rect2( 0, 8, 128, 8 )
+region = Rect2( 0, 16, 256, 16 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 1
 atlas = ExtResource( 1 )
-region = Rect2( 0, 16, 128, 8 )
+region = Rect2( 0, 32, 256, 16 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 1
 atlas = ExtResource( 1 )
-region = Rect2( 0, 24, 128, 8 )
+region = Rect2( 0, 48, 256, 16 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 1
 atlas = ExtResource( 1 )
-region = Rect2( 0, 32, 128, 8 )
+region = Rect2( 0, 64, 256, 16 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 1
 atlas = ExtResource( 1 )
-region = Rect2( 0, 40, 128, 8 )
+region = Rect2( 0, 80, 256, 16 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -42,7 +42,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 64, 4 )
+extents = Vector2( 128, 8 )
 
 [node name="Conveyor" type="StaticBody2D"]
 constant_linear_velocity = Vector2( -100, 0 )
@@ -53,9 +53,10 @@ facing_right = false
 [node name="ConveyorBelt" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 4 )
 frames = SubResource( 7 )
-frame = 3
+frame = 4
 playing = true
+offset = Vector2( 0, 4.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 4 )
+position = Vector2( 0, 8 )
 shape = SubResource( 8 )

@@ -9,6 +9,7 @@ extents = Vector2( 64, 4 )
 polygon = PoolVector2Array( -64, 0, 64, 0, 64, 8, -64, 8 )
 
 [node name="Platform" type="KinematicBody2D"]
+z_index = 14
 motion/sync_to_physics = true
 
 [node name="Sprite" type="Sprite" parent="."]

@@ -32,10 +32,10 @@ extents = Vector2( 1, 1 )
 
 [node name="ForkliftBlue" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+unload_until_offscreen = false
 
 [node name="AnimatedSprite" parent="Flip" index="0"]
 visible = false
-frame = 0
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Flip" index="3"]
 position = Vector2( -8.5, 0 )
