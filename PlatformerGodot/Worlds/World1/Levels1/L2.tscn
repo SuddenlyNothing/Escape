@@ -42,6 +42,7 @@ position = Vector2( 3376, -216 )
 
 [node name="ForkliftBlue5" parent="." index="12" instance=ExtResource( 4 )]
 position = Vector2( 4600, -216 )
+unload_until_onscreen = false
 
 [node name="CheckpointLevel" parent="." index="13" instance=ExtResource( 5 )]
 position = Vector2( 4016, -192 )
@@ -52,15 +53,19 @@ points = PoolVector2Array( 0, 4, 112, 4 )
 
 [node name="ForkliftBlue6" parent="." index="15" instance=ExtResource( 4 )]
 position = Vector2( 5032, -216 )
+unload_until_onscreen = false
 
 [node name="ForkliftBlue7" parent="." index="16" instance=ExtResource( 4 )]
 position = Vector2( 5448, -288 )
+unload_until_onscreen = false
 
 [node name="ForkliftBlue8" parent="." index="17" instance=ExtResource( 4 )]
 position = Vector2( 5760, -376 )
+unload_until_onscreen = false
 
 [node name="ForkliftBlue10" parent="." index="18" instance=ExtResource( 4 )]
 position = Vector2( 5568, -456 )
+unload_until_onscreen = false
 
 [node name="PlatformMoveRepeat2" parent="." index="19" instance=ExtResource( 6 )]
 position = Vector2( 4976, -192 )

@@ -1,6 +1,7 @@
 extends Node2D
 
-export(String, FILE, "*.tscn") var nxt_scene
+export(String, FILE, "*.tscn") var world_1
+export(String, FILE, "*.tscn") var world_2
 
 onready var anim_player := $AnimationPlayer
 
@@ -66,9 +67,14 @@ func _on_Area2D_body_entered(_body):
 func _on_Timer_timeout():
 	anim_player.play("PlayerEscape")
 	yield(anim_player, "animation_finished")
+	goto_world()
+
+func goto_world():
 	Global.complete_intro_cutscene()
-	Global.goto_scene(nxt_scene)
+	if Global.furthest_incomplete_level.world == 1:
+		Global.goto_scene(world_1)
+	elif  Global.furthest_incomplete_level.world == 2:
+		Global.goto_scene(world_2)
 
 func _on_Skip_pressed():
-	Global.complete_intro_cutscene()
-	Global.goto_scene(nxt_scene)
+	goto_world()

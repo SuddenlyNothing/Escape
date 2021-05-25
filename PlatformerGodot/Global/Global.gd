@@ -50,11 +50,6 @@ var default_data = {
 			"2":false,
 			"3":false,
 		},
-		"3": {
-			"1":false,
-			"2":false,
-			"3":false,
-		},
 	},
 }
 
@@ -125,6 +120,7 @@ func get_current_scene():
 
 func goto_scene(path):
 	stop_level_music()
+	previous_scene = current_scene.filename
 	options_menu.exit()
 	reset_level_vars()
 	get_tree().paused = true
@@ -144,7 +140,6 @@ func _deferred_goto_scene(path):
 	reset_scene_vars()
 	
 	# It is now safe to remove the current scene
-	previous_scene = current_scene.filename
 	current_scene.free()
 
 	# Load the new scene.
