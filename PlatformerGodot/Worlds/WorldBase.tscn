@@ -20,3 +20,5 @@ position = Vector2( 8, -80 )
 [node name="PortalEnterLevel" parent="." instance=ExtResource( 2 )]
 position = Vector2( 176, -88 )
 scene_level = 1
+
+[connection signal="tree_exiting" from="." to="." method="_on_WorldBase_tree_exiting"]

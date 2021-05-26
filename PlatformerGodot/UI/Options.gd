@@ -27,7 +27,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel") and active:
 		exit()
 	
-	if Global.current_level.level > -1:
+	if Global.current_world > -1 and !Global.in_world:
 		levels_button.show()
 	else:
 		levels_button.hide()

@@ -26,6 +26,9 @@ var current_level = {
 	"level":-1
 }
 
+var current_world = -1
+var in_world = false
+
 var furthest_incomplete_level = {
 	"world":1,
 	"level":1

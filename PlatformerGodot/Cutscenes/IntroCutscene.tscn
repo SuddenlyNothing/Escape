@@ -112,6 +112,7 @@ font_data = ExtResource( 9 )
 
 [node name="IntroCutscene" type="Node2D"]
 script = ExtResource( 6 )
+world_select = "res://Worlds/WorldSelect.tscn"
 world_1 = "res://Worlds/World1/World1.tscn"
 world_2 = "res://Worlds/World2/World2.tscn"
 

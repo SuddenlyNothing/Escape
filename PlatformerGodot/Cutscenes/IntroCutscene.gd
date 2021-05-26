@@ -1,5 +1,6 @@
 extends Node2D
 
+export(String, FILE, "*.tscn") var world_select
 export(String, FILE, "*.tscn") var world_1
 export(String, FILE, "*.tscn") var world_2
 
@@ -75,6 +76,8 @@ func goto_world():
 		Global.goto_scene(world_1)
 	elif  Global.furthest_incomplete_level.world == 2:
 		Global.goto_scene(world_2)
+	else:
+		Global.goto_scene(world_select)
 
 func _on_Skip_pressed():
 	goto_world()
