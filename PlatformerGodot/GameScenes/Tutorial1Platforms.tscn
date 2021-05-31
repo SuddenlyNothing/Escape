@@ -63,4 +63,3 @@ points = PoolVector2Array( 0, 4, -224, 4 )
 position = Vector2( 3968, -32 )
 points = PoolVector2Array( 0, 4, 0, -508 )
 speed = 300
-idle_seconds = 2.0
