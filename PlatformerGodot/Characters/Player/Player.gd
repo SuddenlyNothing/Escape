@@ -16,7 +16,7 @@ export(float) var ground_move_speed := 50.0
 export(float) var max_x_move_speed := 300.0
 
 export(float) var friction := 30.0
-export(float) var air_friction := 20.0
+export(float) var air_friction := 10.0
 
 export(float) var jump_force := 600.0
 
@@ -36,14 +36,22 @@ var snap_default := Vector2.DOWN * 31
 var y_vel := 0.0
 var max_y := 200 # 200
 
+var floor_vel := Vector2.ZERO
+
 func _ready():
 	Global.player = self
 
 func apply_gravity():
 	if is_on_floor():
-		y_vel = clamp(y_vel+gravity, -jump_force, gravity)
+		if y_vel < -jump_force:
+			return
+		if y_vel > gravity:
+			y_vel = gravity
+		y_vel += gravity
 		return
-	y_vel = clamp(y_vel+gravity, -jump_force, max_fall_speed)
+	if y_vel > max_fall_speed:
+		return
+	y_vel += gravity
 
 func apply_friction():
 	if x_vel > friction:
@@ -65,10 +73,9 @@ func jump():
 	y_vel = -jump_force
 
 func x_move_ground():
-#	x_move_input(ground_move_speed)
 	var x_input_val = x_input()
 	
-	if x_input_val == 0:
+	if x_input_val == 0 or abs(x_vel) > max_x_move_speed:
 		apply_friction()
 		return
 	
@@ -77,7 +84,9 @@ func x_move_ground():
 	if x_input_val > 0 and !facing_right:
 		x_vel = 0
 	
-	x_vel = clamp(x_vel+ground_move_speed*x_input_val, -max_x_move_speed, max_x_move_speed)
+	if abs(x_vel) > max_x_move_speed:
+		return
+	x_vel += ground_move_speed*x_input_val
 
 func x_move_air():
 	x_move_input(air_move_speed)
@@ -87,15 +96,18 @@ func x_move_input(speed):
 		x_vel = 0
 	
 	var x_input_val = x_input()
-	x_vel += speed*x_input_val
+	if x_input_val > 0:
+		if x_vel < max_x_move_speed:
+			x_vel += speed * x_input_val
+	else:
+		if x_vel > -max_x_move_speed:
+			x_vel += speed * x_input_val
 	
-	if x_input_val == 0:
+	if x_input_val == 0 or abs(x_vel) > max_x_move_speed:
 		if is_on_floor():
 			apply_friction()
 		else:
 			apply_air_friction()
-	
-	x_vel = clamp(x_vel, -max_x_move_speed, max_x_move_speed)
 
 func x_input():
 	var x_input_val = 0
@@ -162,3 +174,16 @@ func start_jump_buffer():
 
 func is_jump_buffer_active():
 	return !jump_buffer.is_stopped()
+
+func store_floor_velocity():
+	if is_on_floor():
+		floor_vel = get_floor_velocity()
+
+func apply_floor_velocity():
+	print(floor_vel)
+	x_vel += floor_vel.x
+	y_vel += floor_vel.y
+
+func stop_momentum():
+	x_vel = clamp(x_vel, -max_x_move_speed, max_x_move_speed)
+	y_vel = gravity

@@ -121,6 +121,7 @@ func get_current_scene():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
 
+# warning-ignore:shadowed_variable
 func goto_scene(path):
 	stop_level_music()
 	previous_scene = current_scene.filename
@@ -137,6 +138,7 @@ func reset_scene_vars():
 func reset_level_vars():
 	level_checkpoint = null
 
+# warning-ignore:shadowed_variable
 func _deferred_goto_scene(path):
 
 	# reset variables that differ from each scene
@@ -194,3 +196,7 @@ func stop_level_music():
 	level_music.stop()
 	if !menu_music.is_playing():
 		menu_music.play()
+
+# warning-ignore:unused_argument
+func _process(delta):
+	$CanvasLayer/Label.text = var2str(furthest_incomplete_level)

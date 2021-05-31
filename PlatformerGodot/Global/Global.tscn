@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Global/Global.gd" type="Script" id=1]
 [ext_resource path="res://Global/FadeIn.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://UI/Options.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Sounds/Soundtracks/Office breeze.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Sounds/Soundtracks/MusicMenu.wav" type="AudioStream" id=9]
+[ext_resource path="res://UI/TutorialText.tscn" type="PackedScene" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -88,6 +89,9 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" parent="CanvasLayer" instance=ExtResource( 10 )]
+visible = false
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 pause_mode = 2

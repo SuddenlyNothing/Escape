@@ -14,7 +14,7 @@ func _state_logic(delta):
 	var snap = parent.snap_default
 	match state:
 		states.idle:
-			pass
+			parent.store_floor_velocity()
 		states.jump:
 			parent.x_move_air()
 			snap = Vector2.ZERO
@@ -23,6 +23,7 @@ func _state_logic(delta):
 			parent.x_move_air()
 			parent.start_jump_buffer()
 		states.run:
+			parent.store_floor_velocity()
 			parent.set_facing_right()
 			parent.x_move_ground()
 	parent.move(snap)
@@ -66,6 +67,7 @@ func _get_transition(delta):
 func _enter_state(new_state, old_state):
 	match state:
 		states.idle:
+			parent.stop_momentum()
 			if previous_state == states.jump or previous_state == states.fall:
 				parent.emit_signal("grounded_updated", true)
 			parent.set_idle_body()
@@ -75,7 +77,10 @@ func _enter_state(new_state, old_state):
 				parent.emit_signal("grounded_updated", false)
 			parent.play_anim("jump")
 			parent.jump()
+			parent.apply_floor_velocity()
 		states.fall:
+			if previous_state != states.jump:
+				parent.apply_floor_velocity()
 			if previous_state == states.idle or previous_state == states.run:
 				parent.emit_signal("grounded_updated", false)
 			if parent.y_vel < 0:
@@ -83,6 +88,7 @@ func _enter_state(new_state, old_state):
 			parent.play_anim("fall")
 			parent.coyote_timer.start()
 		states.run:
+			parent.stop_momentum()
 			if previous_state == states.jump or previous_state == states.fall:
 				parent.emit_signal("grounded_updated", true)
 			parent.play_anim("run")

@@ -11,6 +11,7 @@ func _ready():
 	Global.current_world = world_num
 	Global.in_world = true
 	var fil = Global.furthest_incomplete_level
+	print(Global.furthest_incomplete_level)
 	if fil.world > world_num:
 		load_all_levels()
 	elif fil.world == world_num:
