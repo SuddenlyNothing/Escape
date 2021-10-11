@@ -13,7 +13,7 @@ func _process(_delta):
 	prev_camera_pos = get_camera_position()
 
 func _check_facing():
-	var new_facing = sign(get_camera_position().x -prev_camera_pos.x)
+	var new_facing = sign(get_camera_position().x - prev_camera_pos.x)
 	if new_facing != 0 and facing != new_facing:
 		facing = new_facing
 		var target_offset = get_viewport_rect().size.x * LOOK_AHEAD_FACTOR * facing

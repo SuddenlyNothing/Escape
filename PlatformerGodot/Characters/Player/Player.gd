@@ -47,8 +47,6 @@ func apply_gravity():
 			return
 		if y_vel > gravity:
 			y_vel = gravity
-		y_vel += gravity
-		return
 	if y_vel > max_fall_speed:
 		return
 	y_vel += gravity
@@ -118,7 +116,7 @@ func x_input():
 	return x_input_val
 
 func move(snap):
-	var _collision = move_and_slide_with_snap(Vector2(x_vel, y_vel), snap, Vector2(0, -1),
+	var _velocity = move_and_slide_with_snap(Vector2(x_vel, y_vel), snap, Vector2(0, -1),
 		false, 4, PI/4, false)
 	for index in get_slide_count():
 		var collision = get_slide_collision(index)
